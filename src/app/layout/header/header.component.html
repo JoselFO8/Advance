@@ -1,0 +1,12 @@
+<div class="panel-header__brand">
+    <fa-icon [icon]="faBars" class="panel-header__brand-menu" (click)="showMenu.emit()"></fa-icon>
+    <div class="panel-header__brand-logo">
+        <img [src]="logo" alt="logo">
+        <span>DVANCE</span>
+    </div>
+</div>
+<div class="panel-header__submenu">
+    <fa-icon [icon]="faBell" class="panel-header__submenu-icon"></fa-icon>
+    <fa-icon [icon]="faComment" class="panel-header__submenu-icon"></fa-icon>
+    <div class="panel-header__submenu-usr" [ngStyle]="{'background-image': 'url(' + avatar + ')'}"></div>
+</div>

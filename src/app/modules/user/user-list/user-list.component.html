@@ -1,0 +1,27 @@
+<div class="row">
+    <div class="col-12">
+        <app-title-h1 type="secondary" text="LISTA DE USUARIOS"></app-title-h1>
+    </div>
+    <ng-container *ngIf="users else elseUserLoader">
+        <app-card-user [data]="user" *ngFor="let user of users" class="col-12 col-md-6 col-xl-4"></app-card-user>
+    </ng-container>
+    <!-------------------------------
+        Init loader of card user
+    -------------------------------->
+    <ng-template #elseUserLoader>
+        <p>Prueba</p>
+        <app-card-loader class="col-12 col-md-6 col-xl-4" [imageSize]="80" [barHeight]="7" [bars]="4" *ngFor="let i of [0,1,2,3,4,5,6]" ></app-card-loader>
+    </ng-template>
+    <!-------------------------------
+        End loader of card user
+    -------------------------------->
+</div>
+
+ <!-- Carousel -->
+<!-- <div class="container-fluid px-0">
+    <div class="row bg-dark h-100">
+        <div class="col-12 px-0">
+            <app-carousel [items]="carouselData" ></app-carousel>
+        </div>
+    </div>
+</div> -->

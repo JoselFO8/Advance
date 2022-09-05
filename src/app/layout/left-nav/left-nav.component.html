@@ -1,0 +1,16 @@
+<div class="panel-left-nav-brand">
+    <fa-icon [icon]="faBars" class="panel-left-nav-brand__menu" (click)="showMenu.emit()"></fa-icon>
+    <div class="panel-left-nav-brand__logo">
+        <img [src]="logo" alt="logo"/>
+        <span>DVANCE</span>
+    </div>
+</div>
+<div class="panel-left-nav-usr">
+    <div class="panel-left-nav-usr__avatar" [ngStyle]="{'background-image': 'url(' + avatar + ')'}"></div>
+    <h4 class="panel-left-nav-usr__name">{{name}}</h4>
+    <h6 class="panel-left-nav-usr__position">{{position}}</h6>
+</div>
+<ng-container *ngFor="let menu of menus">
+    <app-left-nav-menu [data]="menu"></app-left-nav-menu>
+    <app-left-nav-menu [data]="logoutMenu"></app-left-nav-menu>
+</ng-container>

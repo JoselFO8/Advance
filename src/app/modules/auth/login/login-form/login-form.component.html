@@ -1,0 +1,42 @@
+<h1>Bienvenido de nuevo</h1>
+<p>Gracias por volver a tu sitio favorito, por favor llenar el formulario.</p>
+<form [formGroup]="loginForm" (ngSubmit)="authenticate()">
+    
+    <!--------------------------- Field Email --------------------------->
+
+    <div class="login-form-input">
+        <label>Email*:</label>
+        <input type="email" placeholder="Email" formControlName="email">
+        <small class="bg-danger text-light mt-1 px-2 py-1 rounded" 
+            *ngIf="form['email'].errors && loginSubmmitted"
+        >
+            <ng-container [ngSwitch]="form['email'].value">
+                <ng-container *ngSwitchCase="''">El email es requerido!</ng-container>
+                <ng-container *ngSwitchDefault>El email es invalido!</ng-container>
+            </ng-container>
+        </small>
+    </div>
+    
+    <!--------------------------- Field Password --------------------------->
+
+    <div class="login-form-input">
+        <label for="">Contraseña*:</label>
+        <input type="password" placeholder="Contraseña" formControlName="password">
+        <SMall class="bg-danger text-light mt-1 px-2 py-1 rounded" 
+            *ngIf="form['password'].errors && loginSubmmitted"
+        >
+            <ng-container [ngSwitch]="form['password'].value">
+                <ng-container *ngSwitchCase="''">El password es requerido!</ng-container>
+                <ng-container *ngSwitchDefault>El password maximo debe tener 10 caracteres!</ng-container>
+            </ng-container>
+        </SMall>
+    </div>
+
+    <!--------------------------- Signup Signin --------------------------->
+    
+    <small class="small">Olvidé contraseña</small>
+    <div class="login-form-buttons">
+        <button class="login-form-buttons__signup">Registrarse</button>
+        <button class="login-form-buttons__signin" type="submit">Iniciar sesión</button>
+    </div>
+</form>
