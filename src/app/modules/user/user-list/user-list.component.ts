@@ -20,7 +20,7 @@ export class UserListComponent implements OnInit {
   ) {
     this.userService.getAllUser().subscribe(r => {
         if (!r.error) {
-          this.users = r.data;
+          this.users = r.data.users;
         }
       }
     )

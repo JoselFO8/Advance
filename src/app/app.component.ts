@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss'] // Hojas de estilo o diseño
 })
 export class AppComponent {
-  title = 'angular-firstProyect';
+  title = 'Advance';
 }

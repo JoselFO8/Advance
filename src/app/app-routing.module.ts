@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { SkeletonComponent } from '@layout/skeleton/skeleton.component';
+import { UserListComponent } from '@modules/user/user-list/user-list.component';
 
 const routes: Routes = [
   { 
@@ -15,14 +16,18 @@ const routes: Routes = [
   {
     path: 'panel',
     component: SkeletonComponent,
-    children: [ 
-      {
-        path: 'user',
-        loadChildren: () => 
-          import ('@modules/user/user.module').then((m) => m.UserModule)
-      },
-    ]
-  }, 
+    // children: [ 
+    //   {
+    //     path: 'user',
+    //     loadChildren: () => import ('@modules/user/user.module').then((m) => m.UserModule)
+    //   },
+    // ]
+  },
+  {
+    path: 'users',
+    // component: UserListComponent,
+    loadChildren: () => import ('@modules/user/user.module').then((m) => m.UserModule)
+  },
   {
     path: '**', 
     redirectTo: '/auth/login', 

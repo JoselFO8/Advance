@@ -20,7 +20,7 @@ export class UserDetailComponent implements OnInit {
     private route: ActivatedRoute,
     private userService: UserService
   ) { 
-    this.id = +this.route.snapshot.params['id'];
+    this.id = this.route.snapshot.params['id'];
     // this.currentUser = this.users.find(user => user.id === +this.id) // Se debe agregar un + antes de this, ya que id llega como string, asi se parsea a numero
     // this.currentUser = this.users.find(user => user.id === this.id) // SE VA ATOMAR DSDE API
     // No se necesita dejarlo en ngOnInit por q las constantes se cargan de forma automatica, no es asincrona
@@ -31,7 +31,9 @@ export class UserDetailComponent implements OnInit {
     this.userService.getUserById(this.id).subscribe(
       r => {
         if (!r.error) {
-          this.currentUser = r.data
+          this.currentUser = r.data.user
+          console.log('this.currentUser', this.currentUser);
+          
         }
       }
     )

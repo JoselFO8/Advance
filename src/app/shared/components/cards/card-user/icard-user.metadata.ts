@@ -1,5 +1,13 @@
+export interface IUsers {
+    users: ICardUser[]
+}
+
+export interface IUser {
+    user: ICardUser
+}
+
 export interface ICardUser {
-    id: number;
+    _id: string;
     avatar: string;
     name: string;
     gender: string;
