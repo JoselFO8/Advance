@@ -42,6 +42,7 @@ export class AuthService {
           response.data = r.data;
           this.setUserToLocalStorage(r.data);
           this.currentUser.next(r.data); 
+
           if(!response.error) { 
             this.router.navigateByUrl(INTERNAL_ROUTES.PANEL_USER_LIST);
           }
