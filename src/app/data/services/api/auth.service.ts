@@ -10,17 +10,21 @@ import { BehaviorSubject, catchError, map, Observable, of } from 'rxjs';
   providedIn: 'root'
 })
 export class AuthService {
-  public currentUser: BehaviorSubject<IApiUserAuthenticated | {}>;
+  public currentUser: BehaviorSubject<IApiUserAuthenticated>;
   public nameUserLS = 'currentUser' // LS Local storage
 
   constructor(
     private http: HttpClient,
     private router: Router
   ) { 
-    this.currentUser = new BehaviorSubject(
+    this.currentUser = new BehaviorSubject (
       JSON.parse(localStorage.getItem(this.nameUserLS) || '{}')
       // localStorage.getItem(this.nameUserLS)
     );
+  }
+
+  get getUser(): IApiUserAuthenticated {
+    return this.currentUser.value;
   }
 
   login(
