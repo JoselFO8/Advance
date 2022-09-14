@@ -51,6 +51,7 @@ export class LoginFormComponent implements OnInit {
     }
     console.log('Autenticated', this.loginForm.value);
     this.authService.login(this.loginForm.value as {email: string, password: string}).subscribe(r => {
+      // error:
       console.log(r)
     })
   }

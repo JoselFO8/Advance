@@ -1,13 +1,19 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { INTERNAL_PATHS } from '@data/constants/routes';
 import { SkeletonComponent } from '@layout/skeleton/skeleton.component';
-import { UserListComponent } from '@modules/user/user-list/user-list.component';
+import { Page404Component } from '@modules/server/page404/page404.component';
+// import { UserListComponent } from '@modules/user/user-list/user-list.component';
 
 const routes: Routes = [
   { 
     path: '',
     redirectTo: '/auth/login', 
     pathMatch: 'full', 
+  },
+  {
+    path: INTERNAL_PATHS.API_ERROR_404,
+    component: Page404Component
   },
   {
     path: 'auth', 

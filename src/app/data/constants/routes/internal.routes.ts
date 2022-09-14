@@ -8,6 +8,9 @@ export const ROUTES_PATHS = {
     PANEL: {
         DEFAULT: 'panel',
         USER: 'user',
+    },
+    API: {
+        E_404: 'error-404'
     }
 };
 
@@ -22,6 +25,11 @@ export const INTERNAL_PATHS = {
      */
     PANEL_DEFAULT: `${ROUTES_PATHS.PANEL.DEFAULT}`,
     PANEL_USER_LIST: `${ROUTES_PATHS.PANEL.USER}`,
+
+    /**
+     * API
+     */
+    API_ERROR_404: `${ROUTES_PATHS.API.E_404}`,
 };
 
 export const INTERNAL_ROUTES = {
@@ -34,4 +42,8 @@ export const INTERNAL_ROUTES = {
      */
     // PANEL_USER_LIST: `${INTERNAL_PATHS.PANEL_DEFAULT}/${INTERNAL_PATHS.PANEL_USER_LIST}`,
     PANEL_USER_LIST: `${INTERNAL_PATHS.PANEL_DEFAULT}`,
+    /**
+     * API
+     */
+    API_ERROR_404: `/${INTERNAL_PATHS.API_ERROR_404}`,
 };

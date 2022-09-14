@@ -20,7 +20,7 @@ export class LeftNavComponent implements OnInit {
   public logoutMenu: ILeftNavMenu;
   
   constructor(
-    private authService: AuthService
+    public authService: AuthService
   ) {
     this.logoutMenu = {
       title: '',
