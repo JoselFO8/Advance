@@ -15,7 +15,9 @@ export class JwtInterceptor implements HttpInterceptor {
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
         const currentUser = this.authService.getUser;
         const isAuthenticated = currentUser && currentUser.token;
-        // if(isAuthenticated || req.url !== API_ROUTES.AUTH.LOGIN) { // No se busca añadir un token en login
+        // if(isAuthenticated || req.url !== API_ROUTES.AUTH.LOGIN) { // No se busca autenticacion o un token desde login
+        console.log('isAuthenticated', isAuthenticated);
+        
         if(isAuthenticated) {
             req = req.clone({
                 setHeaders: {

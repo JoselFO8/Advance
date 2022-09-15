@@ -7,10 +7,10 @@ import { ItitleH1 } from './title-h1.metadata';
   styleUrls: ['./title-h1.component.scss']
 })
 export class TitleH1Component implements OnInit {
-  // @Input() data: ItitleH1 = { // poner interface
-  //   text: '',
-  //   type: 'primary' // Por defecto
-  // }; 
+  @Input() data: ItitleH1 = { // poner interface
+    text: '',
+    type: 'primary' // Por defecto
+  }; 
 
   @Input() text = '';
   @Input() type: 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'dark' = 'primary';

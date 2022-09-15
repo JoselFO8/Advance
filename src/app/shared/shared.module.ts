@@ -20,7 +20,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     RouterModule,
     FontAwesomeModule
   ],
-  declarations: [...fromComponents.components, CarouselComponent, CardLoaderComponent], 
+  declarations: [...fromComponents.components], 
   exports: [ 
     FormsModule,
     ReactiveFormsModule,

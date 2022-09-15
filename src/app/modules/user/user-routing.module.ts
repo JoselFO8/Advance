@@ -18,7 +18,7 @@ const routes: Routes = [
 ]; 
 
 @NgModule({ 
-  imports: [RouterModule.forChild(routes)], 
+  imports: [RouterModule.forChild(routes)], // ForChild, ya que este componente se asocia a las rutas hijas (no FroRoot)
   exports: [RouterModule]
 })
 export class UserRoutingModule { }

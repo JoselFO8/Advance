@@ -12,8 +12,9 @@ import { ICarouselItem } from '@shared/components/carousel/Icarousel-item.metada
   styleUrls: ['./user-list.component.scss']
 })
 export class UserListComponent implements OnInit {
-  public carouselData: ICarouselItem[] = CAROUSEL_DATA_ITEMS; // Ahora inyectar informacion en el html del componente
+  // public carouselData: ICarouselItem[] = CAROUSEL_DATA_ITEMS; // Ahora inyectar informacion en el html del componente
   public users?: ICardUser[];
+
 
   constructor(
     private userService: UserService

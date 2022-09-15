@@ -20,14 +20,17 @@ export class AuthGuard implements CanActivate {
     ): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
       
       const currentUser = this.authService.getUser
-      console.log("currentUser", currentUser);
-      if(currentUser.fullname) {
+      console.log("currentUser-authguard", currentUser);
+      if(currentUser.token) {
+        console.log('RETURN TRUE')
+        
         return true;
       }
-
+      console.log('REDIRIGIDO')
       this.router.navigate([INTERNAL_ROUTES.AUTH_LOGIN], {
         queryParams: {returnUrl: state.url}
       })
+      console.log('RETURN FALSE')
       return false
   }
   

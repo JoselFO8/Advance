@@ -12,8 +12,10 @@ export class ErrorInterceptor implements HttpInterceptor {
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
         return next.handle(req).pipe(
             catchError((error) => {
-                console.log('error-interceptor');
+                console.log('error-interceptor', error.status);
                 if ( [401, 403, 404].indexOf(error.status) !== -1 && req.url !== API_ROUTES.AUTH.LOGIN) {
+                    console.log('interceptor funcionando');
+                    
                     this.router.navigateByUrl('/' + error.status);
                 }
                 return throwError(error);

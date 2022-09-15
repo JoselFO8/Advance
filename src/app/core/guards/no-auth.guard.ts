@@ -7,7 +7,6 @@ import { AuthService } from '@data/services/api/auth.service';
   providedIn: 'root'
 })
 export class NoAuthGuard implements CanActivate {
-
   constructor(
     private router: Router,
     private authService: AuthService

@@ -3,6 +3,7 @@ import { CardUserComponent } from "./cards/card-user/card-user.component";
 import { CarouselComponent } from "./carousel/carousel.component";
 import { TitleH1Component } from "./titles/title-h1/title-h1.component";
 
+
 // Loaders
 import { CardLoaderComponent } from "./loaders/card-loader/card-loader.component";
 
@@ -13,7 +14,6 @@ export const components: any[] = [
     TitleH1Component,
     // Loaders
     CardLoaderComponent,
-
 ];
 
 // export all components

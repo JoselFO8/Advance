@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { INTERNAL_PATHS } from '@data/constants/routes';
+import { AuthGuard } from '@core/guards/auth.guard';
+import { INTERNAL_PATHS, INTERNAL_ROUTES } from '@data/constants/routes';
 import { SkeletonComponent } from '@layout/skeleton/skeleton.component';
 import { Page404Component } from '@modules/server/page404/page404.component';
-// import { UserListComponent } from '@modules/user/user-list/user-list.component';
 
 const routes: Routes = [
   { 
     path: '',
-    redirectTo: '/auth/login', 
+    redirectTo: INTERNAL_PATHS.AUTH_LOGIN, 
     pathMatch: 'full', 
   },
   {
@@ -22,6 +22,7 @@ const routes: Routes = [
   {
     path: 'panel',
     component: SkeletonComponent,
+    canActivate: [AuthGuard]
     // children: [ 
     //   {
     //     path: 'user',
@@ -36,7 +37,7 @@ const routes: Routes = [
   },
   {
     path: '**', 
-    redirectTo: '/auth/login', 
+    redirectTo: INTERNAL_ROUTES.AUTH_LOGIN, 
     pathMatch: 'full', 
   }
 
