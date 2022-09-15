@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CtTfooterComponent } from './ct-tfooter.component';
+import { CtTfootComponent } from './ct-tfoot.component';
 
-describe('CtTfooterComponent', () => {
-  let component: CtTfooterComponent;
-  let fixture: ComponentFixture<CtTfooterComponent>;
+describe('CtTfootComponent', () => {
+  let component: CtTfootComponent;
+  let fixture: ComponentFixture<CtTfootComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CtTfooterComponent ]
+      declarations: [ CtTfootComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(CtTfooterComponent);
+    fixture = TestBed.createComponent(CtTfootComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

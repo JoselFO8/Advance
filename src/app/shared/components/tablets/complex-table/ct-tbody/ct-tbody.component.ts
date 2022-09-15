@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-ct-tbody',
+  selector: 'app-ct-tbody, [app-ct-tbody]',
   templateUrl: './ct-tbody.component.html',
   styleUrls: ['./ct-tbody.component.scss']
 })

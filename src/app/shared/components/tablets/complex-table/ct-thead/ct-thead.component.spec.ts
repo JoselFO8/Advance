@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CtTheaderComponent } from './ct-theader.component';
+import { CtTheadComponent } from './ct-thead.component';
 
-describe('CtTheaderComponent', () => {
-  let component: CtTheaderComponent;
-  let fixture: ComponentFixture<CtTheaderComponent>;
+describe('CtTheadComponent', () => {
+  let component: CtTheadComponent;
+  let fixture: ComponentFixture<CtTheadComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CtTheaderComponent ]
+      declarations: [ CtTheadComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(CtTheaderComponent);
+    fixture = TestBed.createComponent(CtTheadComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

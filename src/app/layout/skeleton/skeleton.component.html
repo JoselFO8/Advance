@@ -2,7 +2,7 @@
     <app-header class="panel-header" (showMenu)="showMenu()"></app-header>
     <app-left-nav class="panel-left-nav" *ngIf="showLeftNav" (showMenu)="showMenu()"></app-left-nav>
     <main class="panel-main-content">
-        Contenido Principal
+        <app-complex-table></app-complex-table>
     </main>
     <app-footer class="panel-footer"></app-footer>
 </section>

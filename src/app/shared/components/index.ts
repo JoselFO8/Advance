@@ -9,9 +9,11 @@ import { CardLoaderComponent } from "./loaders/card-loader/card-loader.component
 
 // Complex Table
 import { ComplexTableComponent } from "./tablets/complex-table/complex-table.component";
-import { CtTheaderComponent } from "./tablets/complex-table/ct-theader/ct-theader.component";
+
 import { CtTbodyComponent } from "./tablets/complex-table/ct-tbody/ct-tbody.component";
-import { CtTfooterComponent } from "./tablets/complex-table/ct-tfooter/ct-tfooter.component";
+import { CtTheadComponent } from "./tablets/complex-table/ct-thead/ct-thead.component";
+import { CtTfootComponent } from "./tablets/complex-table/ct-tfoot/ct-tfoot.component";
+
 
 // fromComponents ?
 export const components: any[] = [
@@ -22,9 +24,10 @@ export const components: any[] = [
     CardLoaderComponent,
     // Complex-Table
     ComplexTableComponent,
-    CtTheaderComponent,
+    CtTheadComponent,
     CtTbodyComponent,
-    CtTfooterComponent
+    CtTfootComponent
+    
 ];
 
 // export all components
@@ -36,6 +39,6 @@ export * from './loaders/card-loader/card-loader.component'
 
 // Complex Table
 export * from "./tablets/complex-table/complex-table.component";
-export * from "./tablets/complex-table/ct-theader/ct-theader.component";
 export * from "./tablets/complex-table/ct-tbody/ct-tbody.component";
-export * from "./tablets/complex-table/ct-tfooter/ct-tfooter.component";
+export * from "./tablets/complex-table/ct-thead/ct-thead.component";
+export * from "./tablets/complex-table/ct-tfoot/ct-tfoot.component";

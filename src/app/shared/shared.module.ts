@@ -7,8 +7,6 @@ import { HttpClientModule } from '@angular/common/http'
 import { RouterModule } from '@angular/router';
 
 import * as fromComponents from './components';
-// import { CarouselComponent } from './components/carousel/carousel.component';
-// import { CardLoaderComponent } from './components/loaders/card-loader/card-loader.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
