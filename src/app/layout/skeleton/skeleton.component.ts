@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./skeleton.component.scss']
 })
 export class SkeletonComponent implements OnInit {
-  public showLeftNav = true;
+  public showLeftNav = false;
   public $theme: 'dark' | 'red' | 'blue-dark' | 'yellow' = 'red'
   constructor() {  }
 
