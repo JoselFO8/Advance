@@ -3,13 +3,14 @@ import { IUser, IUsers } from '@shared/components/cards/card-user/icard-user.met
 import { Observable, of } from 'rxjs';
 import { catchError, map  } from 'rxjs/operators';
 import { HttpClient, HttpErrorResponse } from "@angular/common/http";
-import { environment } from '../../../../environments/environment';
+import { environment } from 'environments/environment.dev';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
-  public url = environment.uri;
+  public url = environment.uri
   public isProduction = environment.production
 
   constructor(private http:HttpClient){}

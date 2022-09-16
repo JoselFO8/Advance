@@ -1,0 +1,50 @@
+.sample {
+    background-color: aliceblue;
+    width: 100px;
+    height: 150px;
+    background: url(https://i.postimg.cc/pdMCpGJK) 0 0 no-repeat;
+    background-size: 100%;
+    animation-play-state: paused;
+
+    // &:hover {
+    //     background-color: aqua;
+    //     animation-play-state: sample-image-gif steps(28) 1s infinite both;
+    // }
+}
+
+.sample:hover {
+    background: url(https://i.postimg.cc/pdMCpGJK/Kids-1.webp) 0 0 no-repeat;
+}
+
+// @keyframes sample-gif {
+//     0% {
+//       background-position: 0%;
+//     }
+//     100% {
+//       background-position: 100%;
+//     }
+// }
+
+
+// .like {
+//     display: block;
+//     width: 110px; 
+//     height: 110px;
+//     margin:0 auto;
+//     // background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/349115/like_animation.png) 0 0 no-repeat;
+//     background: url(https://i.postimg.cc/CKw2zDXK/Naturaleza-3-2.gif) 0 0 no-repeat;
+//     background-size: 3000%;
+//   animation-play-state: paused;
+// } 
+// .like:hover {
+//   animation: like-gif steps(28) 1s infinite both;
+// }
+
+// @keyframes like-gif {
+//   0% {
+//     background-position: 0%;
+//   }
+//   100% {
+//     background-position: 100%;
+//   }
+// }

@@ -22,13 +22,13 @@ const routes: Routes = [
   {
     path: 'panel',
     component: SkeletonComponent,
-    canActivate: [AuthGuard]
-    // children: [ 
-    //   {
-    //     path: 'user',
-    //     loadChildren: () => import ('@modules/user/user.module').then((m) => m.UserModule)
-    //   },
-    // ]
+    // canActivate: [AuthGuard]
+    children: [ 
+      {
+        path: 'videos',
+        loadChildren: () => import ('@modules/video/video.module').then((m) => m.VideoModule)
+      },
+    ]
   },
   {
     path: 'users',

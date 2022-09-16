@@ -9,6 +9,7 @@ import { RouterModule } from '@angular/router';
 import * as fromComponents from './components';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
+
 @NgModule({
   imports: [
     FormsModule,
