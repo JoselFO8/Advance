@@ -7,9 +7,11 @@ import { TitleH1Component } from "./titles/title-h1/title-h1.component";
 // Loaders
 import { CardLoaderComponent } from "./loaders/card-loader/card-loader.component";
 
+// Buttons
+import { SolidButtonComponent } from "./buttons/solid-button/solid-button.component";
+
 // Complex Table
 import { ComplexTableComponent } from "./tablets/complex-table/complex-table.component";
-
 import { CtTbodyComponent } from "./tablets/complex-table/ct-tbody/ct-tbody.component";
 import { CtTheadComponent } from "./tablets/complex-table/ct-thead/ct-thead.component";
 import { CtTfootComponent } from "./tablets/complex-table/ct-tfoot/ct-tfoot.component";
@@ -22,6 +24,8 @@ export const components: any[] = [
     TitleH1Component,
     // Loaders
     CardLoaderComponent,
+    // Buttons
+    SolidButtonComponent,
     // Complex-Table
     ComplexTableComponent,
     CtTheadComponent,
@@ -36,6 +40,9 @@ export * from './titles/title-h1/title-h1.component';
 
 // Loaders
 export * from './loaders/card-loader/card-loader.component'
+
+// Buttons
+export * from "./buttons/solid-button/solid-button.component";
 
 // Complex Table
 export * from "./tablets/complex-table/complex-table.component";

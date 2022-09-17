@@ -1,0 +1,6 @@
+<!-- (click)="onClick.emit($event)" -->
+<button 
+    class="button button-{{type}}"
+    [routerLink]="url"
+    (click)="onClick.emit(type)"
+>{{title}}</button>

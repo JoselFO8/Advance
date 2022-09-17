@@ -1,16 +1,78 @@
-<div class="sample">
-    
+<!-- <div>
+    <img 
+        src="https://i.postimg.cc/SRV9SHwV/Kids-4.jpg" 
+        onmouseenter="this.src ='https://i.postimg.cc/F1tBYRCZ/Kids-4.webp'" 
+        onmouseout="this.src = 'https://i.postimg.cc/SRV9SHwV/Kids-4.jpg'"
+    >
+    <p>Prueba</p>
+</div> -->
+
+<app-title-h1 [text]="'Nuevo Usuario'" #mainTitle></app-title-h1>
+<div>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa, distinctio tenetur. Ducimus, voluptatum quae eaque saepe architecto placeat omnis praesentium incidunt vel fugit modi consectetur recusandae, consequatur deleniti, possimus aut.
 </div>
-<p>video-list works!</p>
-<p>video-list works!</p>
-<p>video-list works!</p>
-<!-- <a 
-    href='https://postimg.cc/Hr3XNtKL'target='_blank'
-><img src='https://i.postimg.cc/Hr3XNtKL/Kids-1.webp' alt='Kids-1'/>
-</a> -->
-
-<img id="sample-image" src="https://i.postimg.cc/0j7jWLfZ/Naturaleza-5-0.png" alt="">
 
 
+<app-solid-button 
+    [title]="'Guardar'"
+    [type]="$btnTypes.SUCCESS"
+    (onClick)="continue(false)"
+></app-solid-button>
+<app-solid-button 
+    [title]="'Editar'"
+    [type]="$btnTypes.PRIMARY"
+    (onClick)="actionsChild()"
+    #mainButton
+></app-solid-button>
 
-<div id="likes" class="like"></div>
+<!-- usar template para cosas sencillas como cambiar un texto o algo pequeño ej: mainTitle.text = 'Actualizar usuario'; -->
+<!-- averiguar acerca de modal.openmodal() -->
+<app-solid-button 
+    [title]="'Editar'"
+    [type]="$btnTypes.DANGER"
+    (onClick)="
+        mainTitle.text = 'Actualizar usuario'; 
+        mainButton2.title = 'Actualizar';
+    "
+    #mainButton2
+></app-solid-button>
+
+<!-- <app-solid-button 
+    [title]="'Eliminar'"
+    [type]="$btnTypes.DANGER"
+    (onClick)="actions($event)"
+></app-solid-button>
+<app-solid-button 
+    [title]="'Actualizar'"
+    [type]="$btnTypes.SUCCESS"
+    (onClick)="actions($event)"
+    [url]="'/panel/videos/1'"
+></app-solid-button> -->
+
+<div #container>
+    Hola, esta es una prueba
+</div>
+
+
+<div class="listing-card">
+    <div class="imageVideo">
+        <div class="image">
+            <div class="video">
+                <video 
+                    class="videoplay"
+                    preload="none"
+                    loop="1"
+                    poster="../../../../assets/images/poster.jpg"
+                    #mainVideo
+                >
+                <source src="../../../../assets/video/video.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+    </div>
+    <div class="details">
+        <h4>Campervan Adventures </h4>
+        <p>Take control of the wheel of your very luxury campervan from Vasai</p>
+        <a href="" class="btn-default">Book Now</a>
+    </div>
+</div>
