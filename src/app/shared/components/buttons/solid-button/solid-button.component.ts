@@ -12,5 +12,4 @@ export class SolidButtonComponent {
   @Input() type: SOLID_BUTTON_TYPE_ENUM = SOLID_BUTTON_TYPE_ENUM.PRIMARY;
   @Input() url: any;
   @Output() onClick = new EventEmitter();
-  
 }

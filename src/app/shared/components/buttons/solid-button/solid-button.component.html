@@ -2,5 +2,5 @@
 <button 
     class="button button-{{type}}"
     [routerLink]="url"
-    (click)="onClick.emit(type)"
+    (click)="onClick.emit($event)"
 >{{title}}</button>

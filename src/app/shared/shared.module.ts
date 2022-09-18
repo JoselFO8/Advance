@@ -8,7 +8,6 @@ import { RouterModule } from '@angular/router';
 
 import * as fromComponents from './components';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { VideoPreviewComponent } from './components/cards/card-video/video-preview/video-preview.component';
 
 
 @NgModule({
@@ -21,8 +20,7 @@ import { VideoPreviewComponent } from './components/cards/card-video/video-previ
     FontAwesomeModule
   ],
   declarations: [
-    ...fromComponents.components,
-    VideoPreviewComponent
+    ...fromComponents.components
   ], 
   exports: [ 
     FormsModule,

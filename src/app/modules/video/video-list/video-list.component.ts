@@ -1,4 +1,4 @@
-import { AfterViewInit, asNativeElements, Component, ElementRef, EventEmitter, ViewChild } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { SolidButtonComponent } from '@shared/components';
 import { SOLID_BUTTON_TYPE_ENUM } from '@shared/components/buttons/solid-button/solid-button-type.enum';
 
@@ -8,39 +8,44 @@ import { SOLID_BUTTON_TYPE_ENUM } from '@shared/components/buttons/solid-button/
   styleUrls: ['./video-list.component.scss']
 })
 
-// export class VideoListComponent implements AfterViewInit {
 export class VideoListComponent {
-  public videoElement: any = 'assets/images/poster.jpg'
+  // export class VideoListComponent {
+  public posterElement: any = 'assets/images/poster.jpg'
+  public videoElement: any = 'assets/video/video.mp4'
   public $btnTypes = SOLID_BUTTON_TYPE_ENUM;
 
   @ViewChild('mainButton') mainButton: SolidButtonComponent; // Para este caso aplica
   // @ViewChild('container') container: ElementRef; // Para este caso aplica
   @ViewChild('container',{static:false, read: ElementRef}) container: any;
-  @ViewChild('mainVideo',{static:false, read: ElementRef}) mainVideo: any;
-  // @ViewChild('myVideo') myVideo: any;
+  @ViewChild('mainVideo2',{static:false, read: ElementRef}) mainVideo2: any;
+  
 
   constructor() {
-    // this.mainButton = {
-    //   title: '',
-    //   type: SOLID_BUTTON_TYPE_ENUM.PRIMARY,
-    //   url: '',
-    //   onClick: new EventEmitter()
-    // }
-
     this.mainButton = new SolidButtonComponent;
-
-    // this.container = ;
   }
 
-  // ngAfterViewInit() {
-  //   let video = this.myVideo.nativeElement;
-  //   video.src = URL.createObjectURL(this.videoElement);
-  //   video.play();
-  // }
 
-  // onClicks(events: any) {
-  //   console.log(events);
-  // }
+  playVideo(video: any) {
+    console.log('PLAY VIDEO', video);
+    if(video) video.play()
+    return
+  }
+
+  pauseVideo(video: any) {
+    console.log('PAUSE VIDEO', video);
+    if(video) {
+      video.pause()
+    }
+    return
+  }
+  
+  onclick() {
+    console.log('Prueba video');
+  }
+
+  onClicks(events: any) {
+    console.log(events);
+  }
 
   actions(events: SOLID_BUTTON_TYPE_ENUM) {
     switch (events) {
@@ -66,16 +71,5 @@ export class VideoListComponent {
     this.mainButton.title = 'Prueba'
     this.container.nativeElement.style.display = 'none'    
   }
-
-  // //First will do with single video 
-  // //This code will play for first video only. now will do code for multiple videos
-  // document.querySelector(".videoplay").addEventListener("mouseover", function() {
-  //     this.play()
-  // })
-
-  // document.querySelector(".videoplay").addEventListener("mouseleave", function() {
-  //     this.pause()
-  // })
-  // </script>
 
 }

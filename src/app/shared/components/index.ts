@@ -15,6 +15,7 @@ import { ComplexTableComponent } from "./tablets/complex-table/complex-table.com
 import { CtTbodyComponent } from "./tablets/complex-table/ct-tbody/ct-tbody.component";
 import { CtTheadComponent } from "./tablets/complex-table/ct-thead/ct-thead.component";
 import { CtTfootComponent } from "./tablets/complex-table/ct-tfoot/ct-tfoot.component";
+import { VideoPreviewComponent } from "./cards/card-video/video-preview/video-preview.component";
 
 
 // fromComponents ?
@@ -26,6 +27,8 @@ export const components: any[] = [
     CardLoaderComponent,
     // Buttons
     SolidButtonComponent,
+    // Video
+    VideoPreviewComponent,
     // Complex-Table
     ComplexTableComponent,
     CtTheadComponent,
@@ -43,6 +46,9 @@ export * from './loaders/card-loader/card-loader.component'
 
 // Buttons
 export * from "./buttons/solid-button/solid-button.component";
+
+// Video
+export * from "./cards/card-video/video-preview/video-preview.component";
 
 // Complex Table
 export * from "./tablets/complex-table/complex-table.component";
