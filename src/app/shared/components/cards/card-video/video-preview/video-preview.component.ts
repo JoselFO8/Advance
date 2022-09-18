@@ -1,4 +1,4 @@
-import { Component, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-video-preview, [app-video-preview]',
@@ -8,6 +8,5 @@ import { Component, Input, Output } from '@angular/core';
 export class VideoPreviewComponent {
   @Input() poster = '';
   @Input() src = '';
-  // @Output() onHover = addEventListener
-
+  @Output() onMouseEnter = new EventEmitter
 }

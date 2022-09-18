@@ -17,24 +17,26 @@ export class VideoListComponent {
   @ViewChild('mainButton') mainButton: SolidButtonComponent; // Para este caso aplica
   // @ViewChild('container') container: ElementRef; // Para este caso aplica
   @ViewChild('container',{static:false, read: ElementRef}) container: any;
+  @ViewChild('mainVideo',{static:false, read: ElementRef}) mainVideo: any;
   @ViewChild('mainVideo2',{static:false, read: ElementRef}) mainVideo2: any;
   
-
   constructor() {
     this.mainButton = new SolidButtonComponent;
   }
 
-
   playVideo(video: any) {
-    console.log('PLAY VIDEO', video);
-    if(video) video.play()
+    console.log(video)
+    if(video) {
+      video.play()
+    }
     return
   }
 
   pauseVideo(video: any) {
-    console.log('PAUSE VIDEO', video);
+    console.log(video)
     if(video) {
-      video.pause()
+      video.pause();
+      video.currentTime = 0;
     }
     return
   }
