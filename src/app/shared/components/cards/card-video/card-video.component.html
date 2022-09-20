@@ -1,1 +1,40 @@
-<p>card-video works!</p>
+<div class="card-container">
+    <div class="card-video">
+        <div class="card-video__preview">
+            <video
+                app-video-preview
+                poster="https://i.postimg.cc/GtkHjSVq/Kids-4.jpg"
+                [src]="'../../../../assets/video/video_2.mp4'"
+                (mouseenter)="playVideo($event.target)"
+                (mouseleave)="pauseVideo($event.target)"
+                [muted]="true"
+            ></video>
+        </div>
+    </div>
+
+    <div class="card-detail">
+        <div class="card-detail-avatar">
+            <div class="card-detail-avatar__img">
+                <img 
+                    src="https://cdn.shopify.com/shopifycloud/hatchful_web_two/bundles/aff2c7c41798a9e8d510293d676b1308.png"
+                    alt=""
+                >
+            </div>
+        </div>
+        <div class="card-detail-text">
+            <div class="card-detail-text__title">
+                TITULO TITULO TITULO TITULO TITULO TITULO TITULO
+            </div>
+            <div class="card-detail-text__chanel">
+                <div class="chanel">Nombre canal</div>
+                <i></i>
+            </div>
+            <div class="card-detail-text__statistics">
+                <div class="detail">X M de vistas</div>
+                <div class="dot">•</div>
+                <div class="publicationDate">hace X dias</div>
+            </div>
+        </div>
+    </div>
+
+</div>

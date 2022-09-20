@@ -12,4 +12,21 @@ export class CardVideoComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  playVideo(video: any) {
+    console.log(video)
+    if(video) {
+      video.play()
+    }
+    return
+  }
+
+  pauseVideo(video: any) {
+    console.log(video)
+    if(video) {
+      video.pause();
+      video.currentTime = 0;
+    }
+    return
+  }
+
 }

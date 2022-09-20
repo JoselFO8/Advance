@@ -16,11 +16,13 @@ import { CtTbodyComponent } from "./tablets/complex-table/ct-tbody/ct-tbody.comp
 import { CtTheadComponent } from "./tablets/complex-table/ct-thead/ct-thead.component";
 import { CtTfootComponent } from "./tablets/complex-table/ct-tfoot/ct-tfoot.component";
 import { VideoPreviewComponent } from "./cards/card-video/video-preview/video-preview.component";
+import { CardVideoComponent } from "./cards/card-video/card-video.component";
 
 
 // fromComponents ?
 export const components: any[] = [
     CardUserComponent, // Organizar de forma alfabetica 
+    CardVideoComponent,
     CarouselComponent,
     TitleH1Component,
     // Loaders
@@ -40,6 +42,7 @@ export const components: any[] = [
 // export all components
 export * from './cards/card-user/card-user.component';
 export * from './titles/title-h1/title-h1.component';
+export * from "./cards/card-video/card-video.component";
 
 // Loaders
 export * from './loaders/card-loader/card-loader.component'

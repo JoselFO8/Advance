@@ -45,11 +45,11 @@
 </div>
 
 
-<div class="listing-card">
+<!-- <div class="listing-card">
     <div class="imageVideo">
         <div class="image">
             <div class="video">
-                <!-- [poster]="'../../../../assets/images/poster.jpg'" -->
+                [poster]="'../../../../assets/images/poster.jpg'"
                 <video 
                     app-video-preview
                     [src]="'../../../../assets/video/video.mp4'"
@@ -74,4 +74,7 @@
     src="../../../../assets/video/video.mp4"
     (mouseenter)="playVideo($event.target)"
     (mouseleave)="pauseVideo($event.target)"
-></video>
+></video> -->
+
+
+<app-card-video></app-card-video>
