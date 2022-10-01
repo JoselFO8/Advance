@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { ICardVideo } from './icard-video.metadata';
 
 @Component({
   selector: 'app-card-video',
@@ -6,10 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./card-video.component.scss']
 })
 export class CardVideoComponent implements OnInit {
+  @Input() data?: ICardVideo;
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit(): void {
+    console.log('DATA+++',this.data);
   }
 
   playVideo(video: any) {

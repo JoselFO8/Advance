@@ -25,7 +25,14 @@ $secondary: #655C5C;
             justify-content: space-between;
             // padding: 0 3rem;
             padding: 3rem;
-    
+            
+            &-logoText {
+                color: $primary;
+                font-size: 3em;
+                font-weight: 600;
+                margin-top: 3rem;
+            }
+
             &-logo {
                 height: 60px;
                 // margin-top: 3rem;

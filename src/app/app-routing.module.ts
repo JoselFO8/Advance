@@ -22,19 +22,23 @@ const routes: Routes = [
   {
     path: 'panel',
     component: SkeletonComponent,
-    // canActivate: [AuthGuard]
+    canActivate: [AuthGuard],
     children: [ 
       {
         path: 'videos',
         loadChildren: () => import ('@modules/video/video.module').then((m) => m.VideoModule)
       },
+      {
+        path: 'users',
+        loadChildren: () => import ('@modules/user/user.module').then((m) => m.UserModule)
+      },
     ]
   },
-  {
-    path: 'users',
-    // component: UserListComponent,
-    loadChildren: () => import ('@modules/user/user.module').then((m) => m.UserModule)
-  },
+  // {
+  //   path: 'users',
+  //   // component: UserListComponent,
+  //   loadChildren: () => import ('@modules/user/user.module').then((m) => m.UserModule)
+  // },
   {
     path: '**', 
     redirectTo: INTERNAL_ROUTES.AUTH_LOGIN, 

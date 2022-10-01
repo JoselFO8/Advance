@@ -1,6 +1,6 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
-import { SolidButtonComponent } from '@shared/components';
-import { SOLID_BUTTON_TYPE_ENUM } from '@shared/components/buttons/solid-button/solid-button-type.enum';
+import { Component } from '@angular/core';
+import { VIDEOS } from '@data/constants/video.const';
+import { ICardVideo } from '@shared/components/cards/card-video/icard-video.metadata';
 
 @Component({
   selector: 'app-video-list',
@@ -9,69 +9,26 @@ import { SOLID_BUTTON_TYPE_ENUM } from '@shared/components/buttons/solid-button/
 })
 
 export class VideoListComponent {
-  // export class VideoListComponent {
-  public posterElement: any = 'assets/images/poster.jpg'
-  public videoElement: any = 'assets/video/video.mp4'
-  public $btnTypes = SOLID_BUTTON_TYPE_ENUM;
+  public videos?: ICardVideo[] = VIDEOS;
 
-  @ViewChild('mainButton') mainButton: SolidButtonComponent; // Para este caso aplica
-  // @ViewChild('container') container: ElementRef; // Para este caso aplica
-  @ViewChild('container',{static:false, read: ElementRef}) container: any;
-  @ViewChild('mainVideo',{static:false, read: ElementRef}) mainVideo: any;
-  @ViewChild('mainVideo2',{static:false, read: ElementRef}) mainVideo2: any;
-  
-  constructor() {
-    this.mainButton = new SolidButtonComponent;
-  }
-
-  playVideo(video: any) {
-    console.log(video)
-    if(video) {
-      video.play()
-    }
-    return
-  }
-
-  pauseVideo(video: any) {
-    console.log(video)
-    if(video) {
-      video.pause();
-      video.currentTime = 0;
-    }
-    return
-  }
-  
-  onclick() {
-    console.log('Prueba video');
-  }
-
-  onClicks(events: any) {
-    console.log(events);
-  }
-
-  actions(events: SOLID_BUTTON_TYPE_ENUM) {
-    switch (events) {
-      case SOLID_BUTTON_TYPE_ENUM.SUCCESS:
-        console.log('ejecutando metodo success');
-        break;
-      case SOLID_BUTTON_TYPE_ENUM.DANGER:
-        console.log('ejecutando metodo danger');
-        break;    
-      default:
-        console.log('ejecutando metodo primary');
-        break;
-    }
-    console.log(events);
+  constructor(
+    // private videoService:
+  ) {
     
   }
 
-  continue(status: boolean) {
-    console.log(status ? 'si continuar' : 'no continuar');
-  }
+  // playVideo(video: any) {
+  //   if(video) {
+  //     video.play()
+  //   }
+  //   return
+  // }
 
-  actionsChild() {
-    this.mainButton.title = 'Prueba'
-    this.container.nativeElement.style.display = 'none'    
-  }
-
+  // pauseVideo(video: any) {
+  //   if(video) {
+  //     video.pause();
+  //     video.currentTime = 0;
+  //   }
+  //   return
+  // }
 }

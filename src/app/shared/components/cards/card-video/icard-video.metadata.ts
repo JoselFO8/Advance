@@ -9,9 +9,10 @@ export interface IVideo {
 export interface ICardVideo {
     _id: string;
     sampleImage: string;
+    video: string;
     title: string;
     description: string;
-    chenel: string;
+    chanel: string;
     views: number;
     date: string;
     Visibility: string;

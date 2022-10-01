@@ -1,9 +1,10 @@
-<div class="card-container">
+<div class="card-container" *ngIf="data">
     <div class="card-video">
         <div class="card-video__preview">
+            <!-- poster= "{{data.sampleImage}}" -->
+            <!-- poster= "'../../../../assets/images/poster.jpg'" -->
             <video
                 app-video-preview
-                poster="https://i.postimg.cc/GtkHjSVq/Kids-4.jpg"
                 [src]="'../../../../assets/video/video_2.mp4'"
                 (mouseenter)="playVideo($event.target)"
                 (mouseleave)="pauseVideo($event.target)"
@@ -23,14 +24,14 @@
         </div>
         <div class="card-detail-text">
             <div class="card-detail-text__title">
-                TITULO TITULO TITULO TITULO TITULO TITULO TITULO
+                {{data.title}}
             </div>
             <div class="card-detail-text__chanel">
-                <div class="chanel">Nombre canal</div>
+                <div class="chanel">{{data.chanel}}</div>
                 <i></i>
             </div>
             <div class="card-detail-text__statistics">
-                <div class="detail">X M de vistas</div>
+                <div class="detail">{{data.views}} M de vistas</div>
                 <div class="dot">•</div>
                 <div class="publicationDate">hace X dias</div>
             </div>
@@ -38,3 +39,5 @@
     </div>
 
 </div>
+
+

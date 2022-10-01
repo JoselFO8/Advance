@@ -13,7 +13,7 @@ import { ICarouselItem } from '@shared/components/carousel/Icarousel-item.metada
 })
 export class UserListComponent implements OnInit {
   // public carouselData: ICarouselItem[] = CAROUSEL_DATA_ITEMS; // Ahora inyectar informacion en el html del componente
-  public users?: ICardUser[];
+  public users?: ICardUser[] | undefined;
 
 
   constructor(
@@ -24,10 +24,17 @@ export class UserListComponent implements OnInit {
           this.users = r.data.users;
         }
       }
-    )
+    )  
+
   }
 
+  
+  
+
   ngOnInit(): void {
+    // if(this.users && this.users?.length > 0) {
+    //   console.log("USERS", this.users);
+    // }
   }
 
 }

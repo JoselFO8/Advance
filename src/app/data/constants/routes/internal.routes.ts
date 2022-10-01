@@ -7,7 +7,7 @@ export const ROUTES_PATHS = {
     },
     PANEL: {
         DEFAULT: 'panel',
-        USER: 'user',
+        USER: 'users',
     },
     API: {
         E_404: 'error-404'
@@ -41,7 +41,8 @@ export const INTERNAL_ROUTES = {
      * PANEL
      */
     // PANEL_USER_LIST: `${INTERNAL_PATHS.PANEL_DEFAULT}/${INTERNAL_PATHS.PANEL_USER_LIST}`,
-    PANEL_USER_LIST: `${INTERNAL_PATHS.PANEL_DEFAULT}`,
+    // PANEL_USER_LIST: `${INTERNAL_PATHS.PANEL_DEFAULT}/${INTERNAL_PATHS.PANEL_USER_LIST}`,
+    PANEL_USER_LIST: `${INTERNAL_PATHS.PANEL_DEFAULT}/${INTERNAL_PATHS.PANEL_USER_LIST}`,
     /**
      * API
      */

@@ -1,80 +1,14 @@
-<app-title-h1 [text]="'Nuevo Usuario'" #mainTitle></app-title-h1>
-<div>
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa, distinctio tenetur. Ducimus, voluptatum quae eaque saepe architecto placeat omnis praesentium incidunt vel fugit modi consectetur recusandae, consequatur deleniti, possimus aut.
+<div class="video-list-container">
+    <ng-container *ngIf="videos">
+        <p>{{videos}}</p>
+        <app-card-video 
+            [data]="video" 
+            *ngFor="let video of videos"
+            class="col-12 col-md-6 col-xl-4"
+        ></app-card-video>
+
+        <!-- <ng-container *ngIf="users">
+            <app-card-user [data]="user" *ngFor="let user of users" class="col-12 col-md-6 col-xl-4"></app-card-user>
+        </ng-container> -->
+    </ng-container>
 </div>
-
-
-<app-solid-button 
-    [title]="'Guardar'"
-    [type]="$btnTypes.SUCCESS"
-    (onClick)="continue(false)"
-></app-solid-button>
-<app-solid-button 
-    [title]="'Editar'"
-    [type]="$btnTypes.PRIMARY"
-    (onClick)="actionsChild()"
-    #mainButton
-></app-solid-button>
-
-<!-- usar template para cosas sencillas como cambiar un texto o algo pequeño ej: mainTitle.text = 'Actualizar usuario'; -->
-<!-- averiguar acerca de modal.openmodal() -->
-<app-solid-button 
-    [title]="'Editar'"
-    [type]="$btnTypes.DANGER"
-    (onClick)="
-        mainTitle.text = 'Actualizar usuario'; 
-        mainButton2.title = 'Actualizar';
-    "
-    #mainButton2
-></app-solid-button>
-
-<!-- <app-solid-button 
-    [title]="'Eliminar'"
-    [type]="$btnTypes.DANGER"
-    (onClick)="onClicks($event)"
-></app-solid-button> -->
-<!-- <app-solid-button 
-    [title]="'Actualizar'"
-    [type]="$btnTypes.SUCCESS"
-    (onClick)="actions($event)"
-    [url]="'/panel/videos/1'"
-></app-solid-button> -->
-
-<div #container>
-    Hola, esta es una prueba
-</div>
-
-
-<!-- <div class="listing-card">
-    <div class="imageVideo">
-        <div class="image">
-            <div class="video">
-                [poster]="'../../../../assets/images/poster.jpg'"
-                <video 
-                    app-video-preview
-                    [src]="'../../../../assets/video/video.mp4'"
-                    (mouseenter)="playVideo($event.target)"
-                    (mouseleave)="pauseVideo($event.target)"
-                    [muted]="true"
-                >
-                </video>
-            
-            </div>
-        </div>
-    </div>
-    <div class="details">
-        <h4>Campervan Adventures </h4>
-        <p>Take control of the wheel of your very luxury campervan from Vasai</p>
-        <a href="" class="btn-default">Book Now</a>
-    </div>
-</div>
-
-<video 
-    class="myVideo"
-    src="../../../../assets/video/video.mp4"
-    (mouseenter)="playVideo($event.target)"
-    (mouseleave)="pauseVideo($event.target)"
-></video> -->
-
-
-<app-card-video></app-card-video>
