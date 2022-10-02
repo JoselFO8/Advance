@@ -1,12 +1,13 @@
 <div class="card-container" *ngIf="data">
-    <p>{{data}}</p>
     <div class="card-video">
         <div class="card-video__preview">
-            <!-- poster= "{{data.sampleImage}}" -->
             <!-- poster= "'../../../../assets/images/poster.jpg'" -->
+            <!-- [src]="'../../../../assets/video/video_2.mp4'" -->
+            <!-- poster= "https://i.postimg.cc/7LkPbY0B/Ejercicio-1.jpg" -->
             <video
                 app-video-preview
-                [src]="'../../../../assets/video/video_2.mp4'"
+                poster= "{{data.sampleImage}}"
+                src="{{data.videoURL}}"
                 (mouseenter)="playVideo($event.target)"
                 (mouseleave)="pauseVideo($event.target)"
                 [muted]="true"
@@ -17,8 +18,9 @@
     <div class="card-detail">
         <div class="card-detail-avatar">
             <div class="card-detail-avatar__img">
+                <!-- src="https://cdn.shopify.com/shopifycloud/hatchful_web_two/bundles/aff2c7c41798a9e8d510293d676b1308.png" -->
                 <img 
-                    src="https://cdn.shopify.com/shopifycloud/hatchful_web_two/bundles/aff2c7c41798a9e8d510293d676b1308.png"
+                    src="{{data.sampleImage}}"
                     alt=""
                 >
             </div>

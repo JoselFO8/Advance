@@ -4,7 +4,7 @@ export const VIDEOS: ICardVideo[] = [
   {
     _id: 'abcd1',
     sampleImage: 'https://i.postimg.cc/0jFPv890/Comida-1.jpg',
-    video: 'Ejercicio_1.mp4',
+    videoURL: 'Ejercicio_1.mp4',
     title: '¡El cochecito está atascado en el ascensor!',
     description: '¡El cochecito está atascado en el ascensor! 4 coches coloreados. Dibujos animados para niños',
     chanel: 'Dibujos en español',

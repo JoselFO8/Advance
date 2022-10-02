@@ -9,7 +9,7 @@ export interface IVideo {
 export interface ICardVideo {
     _id: string;
     sampleImage: string;
-    video: string;
+    videoURL: string;
     title: string;
     description: string;
     chanel: string;

@@ -1,6 +1,5 @@
 <div class="video-list-container">
     <ng-container *ngIf="videos">
-        <p>{{videos}}</p>
         <app-card-video 
             [data]="video" 
             *ngFor="let video of videos"
