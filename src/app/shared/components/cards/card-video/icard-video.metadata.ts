@@ -17,6 +17,7 @@ export interface ICardVideo {
     date: string;
     Visibility: string;
     comments?: IComments[];
+    createdAt: string;
 }
 
 export interface IComments {
