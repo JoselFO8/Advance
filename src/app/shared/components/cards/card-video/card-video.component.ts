@@ -12,11 +12,14 @@ export class CardVideoComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {
-    console.log('DATA+++',this.data);
+    if (this.data) {
+      console.log('DATA+++',this.data);
+    }
+    console.log('DATA DESDE card-video+++',this.data);
   }
 
   playVideo(video: any) {
-    console.log(video)
+    // console.log(video)
     if(video) {
       video.play()
     }
@@ -24,7 +27,7 @@ export class CardVideoComponent implements OnInit {
   }
 
   pauseVideo(video: any) {
-    console.log(video)
+    // console.log(video)
     if(video) {
       video.pause();
       video.currentTime = 0;

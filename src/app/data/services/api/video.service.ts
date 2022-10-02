@@ -1,8 +1,9 @@
-import { HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { IUser } from '@shared/components/cards/card-user/icard-user.metadata';
-import { environment } from 'environments/environment.dev';
+import { IVideos } from '@shared/components/cards/card-video/icard-video.metadata';
 import { Observable, of } from 'rxjs';
+import { catchError, map  } from 'rxjs/operators';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { environment } from 'environments/environment.dev';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +13,7 @@ export class VideoService {
   public isProduction = environment.production
 
   constructor(
-    private http: HttpErrorResponse
+    private http: HttpClient
   ) {}
 
   error(error: HttpErrorResponse) {
@@ -31,7 +32,19 @@ export class VideoService {
     })
   }
 
-  // getAllVideos(): Observable<{error: boolean, msg: string, data: IUser}> {
-  //   const response = {error: false, msg: '', data: {} as IUser}
-  // }
+  getAllVideos(): Observable<{error: boolean, msg: string, data: IVideos }> {
+    const response = {error: false, msg: '', data: {} as IVideos}
+    return this.http.get<IVideos>(this.url + 'videos')
+    .pipe(
+      map(
+        r => {
+          console.log("desde servicio getAllVideos",r);
+          
+          response.data = r;
+          return response
+        }
+      ),
+      catchError(() => of(response))
+    )
+  }
 }

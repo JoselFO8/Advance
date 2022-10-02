@@ -34,6 +34,8 @@ export class UserService {
     .pipe(
       map(
         r => {
+          console.log("Desde servicio getAllUser", r);
+          
           response.data.users = r.users;
           return response;
         }

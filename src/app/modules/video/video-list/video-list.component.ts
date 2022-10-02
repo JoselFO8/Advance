@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { VIDEOS } from '@data/constants/video.const';
+import { VideoService } from '@data/services/api/video.service';
 import { ICardVideo } from '@shared/components/cards/card-video/icard-video.metadata';
 
 @Component({
@@ -8,27 +9,25 @@ import { ICardVideo } from '@shared/components/cards/card-video/icard-video.meta
   styleUrls: ['./video-list.component.scss']
 })
 
-export class VideoListComponent {
-  public videos?: ICardVideo[] = VIDEOS;
+export class VideoListComponent implements OnInit {
+  // public videos?: ICardVideo[] = VIDEOS;
+  public videos?: ICardVideo[] | undefined;
 
   constructor(
-    // private videoService:
+    private videoService: VideoService
   ) {
-    
+    this.videoService.getAllVideos().subscribe(r => {
+      if (!r.error) {
+        console.log("DATA",r.data);
+        
+        this.videos = r.data.videos;
+      }
+    }) 
   }
 
-  // playVideo(video: any) {
-  //   if(video) {
-  //     video.play()
-  //   }
-  //   return
-  // }
-
-  // pauseVideo(video: any) {
-  //   if(video) {
-  //     video.pause();
-  //     video.currentTime = 0;
-  //   }
-  //   return
-  // }
+  ngOnInit(): void {
+    if(this.videos && this.videos?.length > 0) {
+      console.log("VIDEOS", this.videos);
+    }
+  }
 }

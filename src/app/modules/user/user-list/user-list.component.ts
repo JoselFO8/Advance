@@ -11,16 +11,18 @@ import { ICarouselItem } from '@shared/components/carousel/Icarousel-item.metada
   templateUrl: './user-list.component.html',
   styleUrls: ['./user-list.component.scss']
 })
+
 export class UserListComponent implements OnInit {
   // public carouselData: ICarouselItem[] = CAROUSEL_DATA_ITEMS; // Ahora inyectar informacion en el html del componente
   public users?: ICardUser[] | undefined;
-
 
   constructor(
     private userService: UserService
   ) {
     this.userService.getAllUser().subscribe(r => {
         if (!r.error) {
+          console.log({r});
+          
           this.users = r.data.users;
         }
       }
@@ -28,13 +30,10 @@ export class UserListComponent implements OnInit {
 
   }
 
-  
-  
-
   ngOnInit(): void {
-    // if(this.users && this.users?.length > 0) {
-    //   console.log("USERS", this.users);
-    // }
+    if(this.users && this.users?.length > 0) {
+      console.log("USERS", this.users);
+    }
   }
 
 }
