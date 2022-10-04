@@ -1,9 +1,11 @@
 <div class="video-list-container">
-    <ng-container *ngIf="videos">
-        <app-card-video 
-            [data]="video" 
-            *ngFor="let video of videos"
-            class="col-12 col-md-6 col-xl-4"
-        ></app-card-video>
-    </ng-container>
+    <div class="video-list-container-row">
+        <ng-container *ngIf="videos">
+            <app-card-video 
+                [data]="video" 
+                *ngFor="let video of videos"
+                class="video-list-container-row__videos"
+            ></app-card-video>
+        </ng-container>
+    </div>
 </div>

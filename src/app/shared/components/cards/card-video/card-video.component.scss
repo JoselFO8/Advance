@@ -7,9 +7,14 @@ $textColor: #606060;
 
 .card {
     &-container {
-        // background-color: cadetblue;
-        width: 374px;
-        height: 342px;
+        background-color: cadetblue;
+        // width: 360px;
+        // height: 340px;
+        // height: 37.5vh;
+        width: 100%;
+        // max-width: 360px;
+        // height: 100%;
+        margin: 0 8px 0 8px;
         
         display: flex;
         flex-direction: column;
@@ -20,25 +25,20 @@ $textColor: #606060;
     }
 
     &-video {
+        // background-color: brown;
+        width: 100%;
+        // height: 20.83vh;
 
-        &__preview {
-            background-color: black;
-            width: 360px;
-            height: 202px;
-            
-            display: flex;
-            justify-content: center;
-            object-fit: cover
-
-            video {
-                height: 100%;
-                object-fit: cover
-            }
+        video {
+            width: 100%;
         }
     }
 
     &-detail {
-        width: 360px;
+        // background-color: blue;
+        border: solid 3px blue;
+        // width: 360px;
+        width: 100%;
         display: flex;
         flex-direction: row;
         margin-top: 5px;

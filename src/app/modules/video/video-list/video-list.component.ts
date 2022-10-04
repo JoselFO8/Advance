@@ -19,16 +19,16 @@ export class VideoListComponent implements OnInit {
   ) {
     this.videoService.getAllVideos().subscribe(r => {
       if (!r.error) {
-        console.log("DATA",r.data);
-        console.log(
-          "Pruebas format desde video-list", format(r.data.videos[0].createdAt, 'en_US')
-        );
+        // console.log("DATA",r.data);
+        // console.log(
+        //   "Pruebas format desde video-list", format(r.data.videos[0].createdAt, 'en_US')
+        // );
         let formatDateVideos = r.data.videos.map(v => {
           let formatDate = format(v.createdAt, 'en_US')
           v.createdAt = formatDate
           return v
         })
-        // this.videos = r.data.videos;
+        // this.videos = r.data.videos
         this.videos = formatDateVideos;
       }
     }) 
