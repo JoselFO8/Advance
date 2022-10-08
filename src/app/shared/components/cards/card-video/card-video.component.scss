@@ -18,6 +18,10 @@ $textColor: #606060;
 
         font-family: $font;
     }
+    
+    &-container:hover {
+        cursor: pointer;
+    }
 
     &-video {
         width: 100%;

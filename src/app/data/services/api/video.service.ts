@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { IVideos } from '@shared/components/cards/card-video/icard-video.metadata';
+import { IVideo, IVideos } from '@shared/components/cards/card-video/icard-video.metadata';
 import { Observable, of } from 'rxjs';
 import { catchError, map  } from 'rxjs/operators';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
@@ -32,6 +32,10 @@ export class VideoService {
     })
   }
 
+  /**
+   * Tomar todos los videos existentes
+   * @returns 
+   */
   getAllVideos(): Observable<{error: boolean, msg: string, data: IVideos }> {
     const response = {error: false, msg: '', data: {} as IVideos}
     return this.http.get<IVideos>(this.url + 'videos')
@@ -47,4 +51,23 @@ export class VideoService {
       catchError(() => of(response))
     )
   }
+
+  getVideoById(id: number): Observable<{error: boolean, msg: string, data: IVideo}>{
+    const response = {error: false, msg: '', data: {} as IVideo}
+    return this.http.get<IVideo>(this.url + 'videos/' + id)
+    .pipe(
+      map (
+        r => {
+          response.data = r
+          console.log(r);
+          return response;
+        }
+      ),
+      catchError(() => of(response))
+    )
+  }
+
+
+
 }
+

@@ -8,7 +8,8 @@ import { Page404Component } from '@modules/server/page404/page404.component';
 const routes: Routes = [
   { 
     path: '',
-    redirectTo: INTERNAL_PATHS.AUTH_LOGIN, 
+    // redirectTo: INTERNAL_PATHS.AUTH_LOGIN, 
+    redirectTo: INTERNAL_ROUTES.PANEL_VIDEOS_LIST, 
     pathMatch: 'full', 
   },
   {
@@ -39,11 +40,11 @@ const routes: Routes = [
   //   // component: UserListComponent,
   //   loadChildren: () => import ('@modules/user/user.module').then((m) => m.UserModule)
   // },
-  // {
-  //   path: '**', 
-  //   redirectTo: INTERNAL_ROUTES.AUTH_LOGIN, 
-  //   pathMatch: 'full', 
-  // }
+  {
+    path: '**', 
+    redirectTo: INTERNAL_ROUTES.PANEL_VIDEOS_LIST, 
+    pathMatch: 'full', 
+  }
 
 ]; 
 

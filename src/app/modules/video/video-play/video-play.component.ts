@@ -1,28 +1,36 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { VideoService } from '@data/services/api/video.service';
+import { ICardVideo } from '@shared/components/cards/card-video/icard-video.metadata';
 
 @Component({
   selector: 'app-video-play',
   templateUrl: './video-play.component.html',
   styleUrls: ['./video-play.component.scss']
 })
-export class VideoPlayComponent implements OnInit, OnDestroy {
+export class VideoPlayComponent implements OnInit {
+  public video?: ICardVideo;
+  public id: number;
+  public currentVideo?: ICardVideo;
 
-  constructor() { }
+  constructor(
+    private route: ActivatedRoute,
+    private videoService: VideoService
+  ) {
+    this.id = this.route.snapshot.params['id'];
+    console.log("Desde video-play This ID", this.id);
+  }
 
   ngOnInit(): void {
-    window.addEventListener('keydown', event => {
-      console.warn(`KEYDOWN: Desde addevent: ${event.key}`)
-    })
-    
-    window.addEventListener('click', this.print)
+    this.videoService.getVideoById(this.id).subscribe(
+      r => {
+        if (!r.error) {
+          this.currentVideo = r.data.video
+          console.log('this.currentVideo', this.currentVideo);
+        }
+      }
+    )
   }
 
-  ngOnDestroy(): void {
-    window.removeEventListener('click', this.print)
-  }
-
-  private print(event: MouseEvent) {
-    console.log('CLICK', event.x, event.y);
-  }
 
 }

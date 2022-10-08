@@ -10,7 +10,7 @@ const routes: Routes = [
   {
     path: '', 
     component: VideoListComponent,
-    // canActivate: [NoAuthGuard]
+    canActivate: [NoAuthGuard]
   }, 
   {
     path: ':id',

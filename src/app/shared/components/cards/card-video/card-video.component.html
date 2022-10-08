@@ -1,5 +1,6 @@
-<div class="card-container" *ngIf="data">
-    <div class="card-video">
+<div class="card-container" *ngIf="data" routerLink="/panel/videos/{{data._id}}">
+    <!-- acomodar de tal forma que se pueda enrutar el canal -->
+    <div class="card-video" routerLink="/panel/videos/{{data._id}}">
             <!-- poster= "https://i.postimg.cc/7LkPbY0B/Ejercicio-1.jpg" -->
             <!-- poster= "{{data.sampleImage}}" -->
             <video
