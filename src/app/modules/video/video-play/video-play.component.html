@@ -1,27 +1,55 @@
 <div class="videoPlay-container">
     
 
-    <div class="videoPlay-media">
+    <div class="videoPlay-media" *ngIf="currentVideo">
         <div class="videoPlay-media-video">
-            <video src="pediente" class="videoPlay-media-video-reproduce"></video>
+            <video src="{{currentVideo.videoURL}}" class="videoPlay-media-video-reproduce"></video>
         </div>
 
         <div class="videoPlay-media-description">
-            <h1 class="videoPlay-media-description-title"></h1>
-            <p class="videoPlay-media-description-description"></p>
+            <h1 class="videoPlay-media-description-title">{{currentVideo.title}}</h1>
+            <div class="videoPlay-media-description-rating">
+                <p class="videoPlay-media-description-rating-views">0 views</p>
+                <p class="videoPlay-media-description-rating-separator">.</p>
+                <p class="videoPlay-media-description-rating-publicationDate">7 oct 2022</p>
+            </div>
+            <p class="videoPlay-media-description-description">{{currentVideo.description}}</p>
             <div class="videoPlay-media-description-chanel">
-                <img src="" alt="" class="videoPlay-media-description-chanel-img">
-                <p class="videoPlay-media-description-chanel-name"></p>
+                <!-- Cambiar sample image por cover y agregar chaneImage -->
+                <img src="{{currentVideo.sampleImage}}" alt="" class="videoPlay-media-description-chanel-img">
+                <p class="videoPlay-media-description-chanel-name">{{currentVideo.chanel}}</p>
             </div>
         </div>
 
-        <div class="videoPlay-media-links">Likes y demas</div>
+        <!-- Poner el condicional en like y dislike, en donde si tiene +0 likes, debe mostrar la cantidad y no el texto 'like' -->
+        <div class="videoPlay-media-links">
+            <div class="videoPlay-media-links-like">
+                <i class="videoPlay-media-links-like-icon"></i>
+                <h3 class="videoPlay-media-links-like-count">0</h3>
+            </div>
+            <div class="videoPlay-media-links-dislike">
+                <i class="videoPlay-media-links-dislike-icon"></i>
+                <h3 class="videoPlay-media-links-dislike-count">0</h3>
+            </div>
+            <div class="videoPlay-media-links-share">
+                <i class="videoPlay-media-links-share-icon"></i>
+                <h3 class="videoPlay-media-links-share-word">COMPARTIR</h3>
+            </div>
+            <div class="videoPlay-media-links-download">
+                <i class="videoPlay-media-links-download-icon"></i>
+                <h3 class="videoPlay-media-links-download-word">DESCARGAR</h3>
+            </div>
+            <div class="videoPlay-media-links-save">
+                <i class="videoPlay-media-links-save-icon"></i>
+                <h3 class="videoPlay-media-links-save-word">GUARDAR</h3>
+            </div>
+        </div>
     </div>
 
 
     <div class="videoPlay-comments">
         <div class="videoPlay-comments-header">
-            <h2 class="videoPlay-comments-header-amount"></h2>
+            <h2 class="videoPlay-comments-header-amount">19 comentarios</h2>
             <div class="videoPlay-comments-header-order">
                 <i class="videoPlay-comments-header-order-icon"></i>
                 <h2 class="videoPlay-comments-header-order-type">ORDENAR POR</h2>
@@ -31,15 +59,19 @@
             <div class="videoPlay-comments-input">
                 <div class="videoPlay-comments-input">
                     <img src="" alt="" class="videoPlay-comments-input-img">
-                    <textarea name="" id="" cols="30" rows="10" class="videoPlay-comments-input-comment"></textarea>
+                    <textarea name="" id="" cols="30" rows="10" placeholder="Agregar un comentario..." class="videoPlay-comments-input-comment"></textarea>
                 </div>
                 <div class="videoPlay-comments-posted">
                     <ng-container class="videoPlay-comments-posted-container">
-                        <img src="" alt="" class="videoPlay-comments-posted-img">
-                        <p class="videoPlay-comments-posted-chanel"></p>
-                        <p class="videoPlay-comments-posted-date"></p>
-                        <p class="videoPlay-comments-posted-comment"></p>
-                        <div class="videoPlay-comments-posted-reply"><i class="videoPlay-comments-posted-reply-like"></i><i class="videoPlay-comments-posted-reply-dislike"></i><button class="videoPlay-comments-posted-reply-response"></button></div>
+                        <img src="https://yt3.ggpht.com/ytc/AMLnZu_7QhYANtG97E9trnXxoloM-Us5q7w9F6A5yk_1ZsVI5542YdNm-EzI7a3Ah7O3=s48-c-k-c0x00ffffff-no-rj" alt="Imagen del canal" class="videoPlay-comments-posted-img">
+                        <p class="videoPlay-comments-posted-chanel">Canal X</p>
+                        <p class="videoPlay-comments-posted-date">hace 6 horas</p>
+                        <p class="videoPlay-comments-posted-comment">Compentario posteado</p>
+                        <div class="videoPlay-comments-posted-reply">
+                            <i class="videoPlay-comments-posted-reply-like">Icono like</i>
+                            <i class="videoPlay-comments-posted-reply-dislike">Icono dislike</i>
+                            <button class="videoPlay-comments-posted-reply-response">RESPONDER</button>
+                        </div>
                     </ng-container>
                 </div>
             </div>

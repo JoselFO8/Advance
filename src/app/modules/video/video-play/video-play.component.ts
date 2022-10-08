@@ -9,7 +9,7 @@ import { ICardVideo } from '@shared/components/cards/card-video/icard-video.meta
   styleUrls: ['./video-play.component.scss']
 })
 export class VideoPlayComponent implements OnInit {
-  public video?: ICardVideo;
+  // public video?: ICardVideo;
   public id: number;
   public currentVideo?: ICardVideo;
 
