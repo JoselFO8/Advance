@@ -2,6 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { VideoService } from '@data/services/api/video.service';
 import { ICardVideo } from '@shared/components/cards/card-video/icard-video.metadata';
+import { format } from 'timeago.js';
 
 @Component({
   selector: 'app-video-play',
@@ -9,9 +10,9 @@ import { ICardVideo } from '@shared/components/cards/card-video/icard-video.meta
   styleUrls: ['./video-play.component.scss']
 })
 export class VideoPlayComponent implements OnInit {
-  // public video?: ICardVideo;
   public id: number;
   public currentVideo?: ICardVideo;
+  public suggestedVideo?: ICardVideo[] | undefined;
 
   constructor(
     private route: ActivatedRoute,
@@ -22,6 +23,7 @@ export class VideoPlayComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
     this.videoService.getVideoById(this.id).subscribe(
       r => {
         if (!r.error) {
@@ -30,7 +32,17 @@ export class VideoPlayComponent implements OnInit {
         }
       }
     )
-  }
 
+    this.videoService.getAllVideos().subscribe(r => {
+      if(!r.error) {
+        let formatDateVideos = r.data.videos.map(v => {
+          let formatDate = format(v.createdAt, 'es')
+          v.createdAt = formatDate
+          return v
+        })
+        this.suggestedVideo = formatDateVideos;
+      }
+    })
+  }
 
 }
