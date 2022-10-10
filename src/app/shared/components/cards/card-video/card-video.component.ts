@@ -12,10 +12,9 @@ export class CardVideoComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {
-    if (this.data) {
-      console.log('DATA+++',this.data);
-    }
-    console.log('DATA DESDE card-video+++',this.data);
+    // if (this.data) {
+    //   console.log('DATA+++',this.data);
+    // }
   }
 
   playVideo(video: any) {

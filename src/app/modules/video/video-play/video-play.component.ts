@@ -35,11 +35,13 @@ export class VideoPlayComponent implements OnInit {
 
     this.videoService.getAllVideos().subscribe(r => {
       if(!r.error) {
-        let formatDateVideos = r.data.videos.map(v => {
-          let formatDate = format(v.createdAt, 'es')
-          v.createdAt = formatDate
-          return v
-        })
+        let formatDateVideos = r.data.videos.filter(
+          v => v._id !== this.id.toString()
+          ).map(v => {
+            let formatDate = format(v.createdAt, 'es')
+            v.createdAt = formatDate
+            return v
+          })
         this.suggestedVideo = formatDateVideos;
       }
     })
