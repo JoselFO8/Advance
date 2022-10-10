@@ -42,6 +42,7 @@ export class VideoPlayComponent implements OnInit {
             v.createdAt = formatDate
             return v
           })
+          console.log(formatDateVideos);
         this.suggestedVideo = formatDateVideos;
       }
     })

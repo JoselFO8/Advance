@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500&display=swap');
+
+
+$font: 'Roboto', 'Arial', sans-serif;
+$titleColor: #030303;
+$textColor: #606060;
+
+.card {
+    &-container {
+        width: 100%;
+        height: 100%;
+        // margin: 0 8px 0 8px;
+        
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+
+        font-family: $font;
+    }
+    
+    &-container:hover {
+        cursor: pointer;
+    }
+
+    &-video {
+        width: 100%;
+        // height: 20.83vh;
+
+        video {
+            width: 100%;
+        }
+    }
+
+    &-detail {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        margin-top: 5px;
+        justify-content: flex-start;
+
+        &-avatar {
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
+
+            &__img {
+                width: 100%;
+                height: 100%;
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                
+                img {
+                    width: 36px;
+                    height: 36px;
+                    border-radius: 100%;
+                }
+            }
+        }
+        
+        &-text {
+            
+            &__title {
+                display: inline-block;
+                
+                font-family: Roboto;
+                font-size: 1.1rem;
+                font-weight: 500;
+                color: #030303;
+                text-overflow: ellipsis; // Cuando el texto se salga del contenedor, aplica puntos suspensivos
+            }
+
+            &__chanel {
+                display: flex;
+                flex-direction: row;
+
+                .chanel {
+                    display: inline-block;
+                    color: $textColor;
+                    font-size: 1rem;
+                    font-family: 'Arial';
+                }
+            }
+
+            &__statistics {
+                display: flex;
+                flex-direction: row;
+                gap: 5px;
+
+                .detail, .dot, .publicationDate {
+                    display: inline-block; 
+                    color: $textColor;
+                    font-size: 1rem;
+                    font-family: 'Arial';
+                }
+            }
+        }
+    }
+    
+}

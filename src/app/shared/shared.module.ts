@@ -20,7 +20,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     FontAwesomeModule
   ],
   declarations: [
-    ...fromComponents.components
+    ...fromComponents.components,
   ], 
   exports: [ 
     FormsModule,

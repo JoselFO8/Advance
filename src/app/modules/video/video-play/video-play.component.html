@@ -1,97 +1,99 @@
 <div class="videoPlay-container">
+    <div class="videoPlay-container-center">
+
+        <div class="videoPlay-media" *ngIf="currentVideo">
+            <div class="videoPlay-media-video">
+                <video src="{{currentVideo.videoURL}}" class="videoPlay-media-video-reproduce" controls></video>
+            </div>
     
-
-    <div class="videoPlay-media" *ngIf="currentVideo">
-        <div class="videoPlay-media-video">
-            <video src="{{currentVideo.videoURL}}" class="videoPlay-media-video-reproduce" controls></video>
-        </div>
-
-        <div class="videoPlay-media-description">
-            <h1 class="videoPlay-media-description-title">{{currentVideo.title}}</h1>
-            <div class="videoPlay-media-description-rating">
-                <p class="videoPlay-media-description-rating-views">0 views</p>
-                <p class="videoPlay-media-description-rating-separator">.</p>
-                <p class="videoPlay-media-description-rating-publicationDate">7 oct 2022</p>
+            <div class="videoPlay-media-description">
+                <h1 class="videoPlay-media-description-title">{{currentVideo.title}}</h1>
+                <div class="videoPlay-media-description-rating">
+                    <p class="videoPlay-media-description-rating-views">0 views</p>
+                    <p class="videoPlay-media-description-rating-separator">.</p>
+                    <p class="videoPlay-media-description-rating-publicationDate">7 oct 2022</p>
+                </div>
+                <p class="videoPlay-media-description-description">{{currentVideo.description}}</p>
+                <div class="videoPlay-media-description-chanel">
+                    <!-- Cambiar sample image por cover y agregar chaneImage -->
+                    <img src="{{currentVideo.sampleImage}}" alt="" class="videoPlay-media-description-chanel-img">
+                    <p class="videoPlay-media-description-chanel-name">{{currentVideo.chanel}}</p>
+                </div>
             </div>
-            <p class="videoPlay-media-description-description">{{currentVideo.description}}</p>
-            <div class="videoPlay-media-description-chanel">
-                <!-- Cambiar sample image por cover y agregar chaneImage -->
-                <img src="{{currentVideo.sampleImage}}" alt="" class="videoPlay-media-description-chanel-img">
-                <p class="videoPlay-media-description-chanel-name">{{currentVideo.chanel}}</p>
-            </div>
-        </div>
-
-        <!-- Poner el condicional en like y dislike, en donde si tiene +0 likes, debe mostrar la cantidad y no el texto 'like' -->
-        <div class="videoPlay-media-links">
-            <div class="videoPlay-media-links-like">
-                <i class="videoPlay-media-links-like-icon"></i>
-                <h3 class="videoPlay-media-links-like-count">0</h3>
-            </div>
-            <div class="videoPlay-media-links-dislike">
-                <i class="videoPlay-media-links-dislike-icon"></i>
-                <h3 class="videoPlay-media-links-dislike-count">0</h3>
-            </div>
-            <div class="videoPlay-media-links-share">
-                <i class="videoPlay-media-links-share-icon"></i>
-                <h3 class="videoPlay-media-links-share-word">COMPARTIR</h3>
-            </div>
-            <div class="videoPlay-media-links-download">
-                <i class="videoPlay-media-links-download-icon"></i>
-                <h3 class="videoPlay-media-links-download-word">DESCARGAR</h3>
-            </div>
-            <div class="videoPlay-media-links-save">
-                <i class="videoPlay-media-links-save-icon"></i>
-                <h3 class="videoPlay-media-links-save-word">GUARDAR</h3>
+    
+            <!-- Poner el condicional en like y dislike, en donde si tiene +0 likes, debe mostrar la cantidad y no el texto 'like' -->
+            <div class="videoPlay-media-links">
+                <div class="videoPlay-media-links-like">
+                    <i class="videoPlay-media-links-like-icon"></i>
+                    <h3 class="videoPlay-media-links-like-count">0</h3>
+                </div>
+                <div class="videoPlay-media-links-dislike">
+                    <i class="videoPlay-media-links-dislike-icon"></i>
+                    <h3 class="videoPlay-media-links-dislike-count">0</h3>
+                </div>
+                <div class="videoPlay-media-links-share">
+                    <i class="videoPlay-media-links-share-icon"></i>
+                    <h3 class="videoPlay-media-links-share-word">COMPARTIR</h3>
+                </div>
+                <div class="videoPlay-media-links-download">
+                    <i class="videoPlay-media-links-download-icon"></i>
+                    <h3 class="videoPlay-media-links-download-word">DESCARGAR</h3>
+                </div>
+                <div class="videoPlay-media-links-save">
+                    <i class="videoPlay-media-links-save-icon"></i>
+                    <h3 class="videoPlay-media-links-save-word">GUARDAR</h3>
+                </div>
             </div>
         </div>
-    </div>
-
-
-    <div class="videoPlay-comments">
-        <div class="videoPlay-comments-header">
-            <h2 class="videoPlay-comments-header-amount">19 comentarios</h2>
-            <div class="videoPlay-comments-header-order">
-                <i class="videoPlay-comments-header-order-icon"></i>
-                <h2 class="videoPlay-comments-header-order-type">ORDENAR POR</h2>
+    
+    
+        <div class="videoPlay-comments">
+            <div class="videoPlay-comments-header">
+                <h2 class="videoPlay-comments-header-amount">19 comentarios</h2>
+                <div class="videoPlay-comments-header-order">
+                    <i class="videoPlay-comments-header-order-icon"></i>
+                    <h2 class="videoPlay-comments-header-order-type">ORDENAR POR</h2>
+                </div>
             </div>
-        </div>
-        <div class="videoPlay-comments-body">
-            <div class="videoPlay-comments-input">
+            <div class="videoPlay-comments-body">
                 <div class="videoPlay-comments-input">
-                    <img src="" alt="" class="videoPlay-comments-input-img">
-                    <textarea name="" id="" cols="30" rows="10" placeholder="Agregar un comentario..." class="videoPlay-comments-input-comment"></textarea>
-                </div>
-                <div class="videoPlay-comments-posted">
-                    <ng-container class="videoPlay-comments-posted-container">
-                        <img src="https://yt3.ggpht.com/ytc/AMLnZu_7QhYANtG97E9trnXxoloM-Us5q7w9F6A5yk_1ZsVI5542YdNm-EzI7a3Ah7O3=s48-c-k-c0x00ffffff-no-rj" alt="Imagen del canal" class="videoPlay-comments-posted-img">
-                        <p class="videoPlay-comments-posted-chanel">Canal X</p>
-                        <p class="videoPlay-comments-posted-date">hace 6 horas</p>
-                        <p class="videoPlay-comments-posted-comment">Compentario posteado</p>
-                        <div class="videoPlay-comments-posted-reply">
-                            <i class="videoPlay-comments-posted-reply-like">Icono like</i>
-                            <i class="videoPlay-comments-posted-reply-dislike">Icono dislike</i>
-                            <button class="videoPlay-comments-posted-reply-response">RESPONDER</button>
-                        </div>
-                    </ng-container>
+                    <div class="videoPlay-comments-input">
+                        <img src="" alt="" class="videoPlay-comments-input-img">
+                        <textarea name="" id="" cols="30" rows="10" placeholder="Agregar un comentario..." class="videoPlay-comments-input-comment"></textarea>
+                    </div>
+                    <div class="videoPlay-comments-posted">
+                        <ng-container class="videoPlay-comments-posted-container">
+                            <img src="https://yt3.ggpht.com/ytc/AMLnZu_7QhYANtG97E9trnXxoloM-Us5q7w9F6A5yk_1ZsVI5542YdNm-EzI7a3Ah7O3=s48-c-k-c0x00ffffff-no-rj" alt="Imagen del canal" class="videoPlay-comments-posted-img">
+                            <p class="videoPlay-comments-posted-chanel">Canal X</p>
+                            <p class="videoPlay-comments-posted-date">hace 6 horas</p>
+                            <p class="videoPlay-comments-posted-comment">Compentario posteado</p>
+                            <div class="videoPlay-comments-posted-reply">
+                                <i class="videoPlay-comments-posted-reply-like">Icono like</i>
+                                <i class="videoPlay-comments-posted-reply-dislike">Icono dislike</i>
+                                <button class="videoPlay-comments-posted-reply-response">RESPONDER</button>
+                            </div>
+                        </ng-container>
+                    </div>
                 </div>
             </div>
         </div>
+    
+    
+        <div class="videoPlay-suggested">
+            <div class="videoPlay-suggested-header">
+                <h2 class="videoPlay-suggested-header-options">Videos sugeridos</h2>
+            </div>
+            <div class="videoPlay-suggested-body">
+                <ng-container class="videoPlay-suggested-cards" *ngIf="suggestedVideo">
+                    <app-card-video-row
+                        [data]="video" 
+                        *ngFor="let video of suggestedVideo"
+                        class="videoPlay-suggested-cards-row__videos"
+                    ></app-card-video-row>
+                </ng-container>
+            </div>
+        </div>
+
     </div>
 
-
-    <div class="videoPlay-suggested">
-        <div class="videoPlay-suggested-header">
-            <h2 class="videoPlay-suggested-header-options">Videos sugeridos</h2>
-        </div>
-        <div class="videoPlay-suggested-body">
-            <ng-container class="videoPlay-suggested-cards" *ngIf="suggestedVideo">
-                <div>Agregar cards de videos sugeridos</div>
-                <app-card-video 
-                    [data]="video" 
-                    *ngFor="let video of suggestedVideo"
-                    class="videoPlay-suggested-cards-row__videos"
-                ></app-card-video>
-            </ng-container>
-        </div>
-    </div>
 </div>

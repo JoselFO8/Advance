@@ -17,12 +17,14 @@ import { CtTheadComponent } from "./tablets/complex-table/ct-thead/ct-thead.comp
 import { CtTfootComponent } from "./tablets/complex-table/ct-tfoot/ct-tfoot.component";
 import { VideoPreviewComponent } from "./cards/card-video/video-preview/video-preview.component";
 import { CardVideoComponent } from "./cards/card-video/card-video.component";
+import { CardVideoRowComponent } from "./cards/card-video-row/card-video-row.component";
 
 
 // fromComponents ?
 export const components: any[] = [
     CardUserComponent, // Organizar de forma alfabetica 
     CardVideoComponent,
+    CardVideoRowComponent,
     CarouselComponent,
     TitleH1Component,
     // Loaders
@@ -52,6 +54,8 @@ export * from "./buttons/solid-button/solid-button.component";
 
 // Video
 export * from "./cards/card-video/video-preview/video-preview.component";
+export * from "./cards/card-video-row/card-video-row.component";
+
 
 // Complex Table
 export * from "./tablets/complex-table/complex-table.component";
