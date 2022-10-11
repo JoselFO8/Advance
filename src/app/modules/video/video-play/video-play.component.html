@@ -8,42 +8,95 @@
     
             <div class="videoPlay-media-description">
                 <h1 class="videoPlay-media-description-title">{{currentVideo.title}}</h1>
-                <div class="videoPlay-media-description-rating">
-                    <p class="videoPlay-media-description-rating-views">0 views</p>
-                    <p class="videoPlay-media-description-rating-separator">.</p>
-                    <p class="videoPlay-media-description-rating-publicationDate">7 oct 2022</p>
+                
+                <div class="videoPlay-media-description-optionsContainer">
+
+                    <div class="videoPlay-media-description-rating">
+                        <p class="videoPlay-media-description-rating-views">1000 vistas</p>
+                        <p class="videoPlay-media-description-rating-separator">•</p>
+                        <p class="videoPlay-media-description-rating-publicationDate">7 oct 2022</p>
+                    </div>
+
+                    <!-- Poner el condicional en like y dislike, en donde si tiene +0 likes, debe mostrar la cantidad y no el texto 'like' -->
+                    <div class="videoPlay-media-description-links">
+                        <!-- like -->
+                         <!-- <i class="videoPlay-media-description-links-render-icon"></i> -->
+                        <div class="videoPlay-media-description-links-render">
+                            <div class="videoPlay-media-description-links-render-flex">
+                                <!-- <div class="videoPlay-media-description-links-render-flex-iconContainer"> -->
+                                <fa-icon [icon]="faBars" class="videoPlay-media-description-links-render-flex-icon"></fa-icon>
+                                <!-- </div> -->
+                                <div class="videoPlay-media-description-links-render-flex-description">
+                                    <h1>ME GUSTA</h1>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- dislike -->
+                        <div class="videoPlay-media-description-links-render">
+                            <div class="videoPlay-media-description-links-render-flex">
+                                <fa-icon [icon]="faBars" class="videoPlay-media-description-links-render-flex-icon"></fa-icon>
+                                <div class="videoPlay-media-description-links-render-flex-description">
+                                    <h1>NO ME GUSTA</h1>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- share -->
+                        <div class="videoPlay-media-description-links-render">
+                            <div class="videoPlay-media-description-links-render-flex">
+                                <fa-icon [icon]="faBars" class="videoPlay-media-description-links-render-flex-icon"></fa-icon>
+                                <div class="videoPlay-media-description-links-render-flex-description">
+                                    <h1>COMPARTIR</h1>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- download -->
+                        <div class="videoPlay-media-description-links-render">
+                            <div class="videoPlay-media-description-links-render-flex">
+                                <fa-icon [icon]="faBars" class="videoPlay-media-description-links-render-flex-icon"></fa-icon>
+                                <div class="videoPlay-media-description-links-render-flex-description">
+                                    <h1>DESCARGAR</h1>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Donar -->
+                        <div class="videoPlay-media-description-links-render">
+                            <div class="videoPlay-media-description-links-render-flex">
+                                <fa-icon [icon]="faBars" class="videoPlay-media-description-links-render-flex-icon"></fa-icon>
+                                <div class="videoPlay-media-description-links-render-flex-description">
+                                    <h1>GRACIAS</h1>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Recortar -->
+                        <div class="videoPlay-media-description-links-render">
+                            <div class="videoPlay-media-description-links-render-flex">
+                                <fa-icon [icon]="faBars" class="videoPlay-media-description-links-render-flex-icon"></fa-icon>
+                                <div class="videoPlay-media-description-links-render-flex-description">
+                                    <h1>RECORTAR</h1>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- save -->
+                        <div class="videoPlay-media-description-links-render">
+                            <div class="videoPlay-media-description-links-render-flex">
+                                <fa-icon [icon]="faBars" class="videoPlay-media-description-links-render-flex-icon"></fa-icon>
+                                <div class="videoPlay-media-description-links-render-flex-description">
+                                    <h1>GUARDAR</h1>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
                 </div>
-                <p class="videoPlay-media-description-description">{{currentVideo.description}}</p>
-                <div class="videoPlay-media-description-chanel">
-                    <!-- Cambiar sample image por cover y agregar chaneImage -->
-                    <img src="{{currentVideo.sampleImage}}" alt="" class="videoPlay-media-description-chanel-img">
+                <!-- <p class="videoPlay-media-description-description">{{currentVideo.description}}</p>
+                <div class="videoPlay-media-description-chanel"> -->
+                    <!-- // Cambiar sample image por cover y agregar chaneImage -->
+                    <!-- <img src="{{currentVideo.sampleImage}}" alt="" class="videoPlay-media-description-chanel-img">
                     <p class="videoPlay-media-description-chanel-name">{{currentVideo.chanel}}</p>
-                </div>
+                </div> -->
             </div>
     
-            <!-- Poner el condicional en like y dislike, en donde si tiene +0 likes, debe mostrar la cantidad y no el texto 'like' -->
-            <div class="videoPlay-media-links">
-                <div class="videoPlay-media-links-like">
-                    <i class="videoPlay-media-links-like-icon"></i>
-                    <h3 class="videoPlay-media-links-like-count">0</h3>
-                </div>
-                <div class="videoPlay-media-links-dislike">
-                    <i class="videoPlay-media-links-dislike-icon"></i>
-                    <h3 class="videoPlay-media-links-dislike-count">0</h3>
-                </div>
-                <div class="videoPlay-media-links-share">
-                    <i class="videoPlay-media-links-share-icon"></i>
-                    <h3 class="videoPlay-media-links-share-word">COMPARTIR</h3>
-                </div>
-                <div class="videoPlay-media-links-download">
-                    <i class="videoPlay-media-links-download-icon"></i>
-                    <h3 class="videoPlay-media-links-download-word">DESCARGAR</h3>
-                </div>
-                <div class="videoPlay-media-links-save">
-                    <i class="videoPlay-media-links-save-icon"></i>
-                    <h3 class="videoPlay-media-links-save-word">GUARDAR</h3>
-                </div>
-            </div>
         </div>
     
     

@@ -4,6 +4,10 @@ import { VideoService } from '@data/services/api/video.service';
 import { ICardVideo } from '@shared/components/cards/card-video/icard-video.metadata';
 import { format } from 'timeago.js';
 
+// Icons
+import { faBars } from '@fortawesome/free-solid-svg-icons'
+
+
 @Component({
   selector: 'app-video-play',
   templateUrl: './video-play.component.html',
@@ -13,6 +17,7 @@ export class VideoPlayComponent implements OnInit {
   public id: number;
   public currentVideo?: ICardVideo;
   public suggestedVideo?: ICardVideo[] | undefined;
+  public faBars = faBars;
 
   constructor(
     private route: ActivatedRoute,

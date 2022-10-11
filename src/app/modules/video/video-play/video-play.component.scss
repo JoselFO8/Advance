@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap');
 
 $font: 'Roboto', 'Arial', sans-serif;
 $titleColor: #030303;
@@ -7,13 +7,11 @@ $textColor: #606060;
 .videoPlay {
     &-container {
         background-color: bisque;
-        // width: 100vw;
         display: flex;
         justify-content: center;
         
         &-center {
             background-color: grey;
-            // width: 100%;
             max-width: 1706px;    
             display: grid;
             grid-template-columns: auto 402px;
@@ -22,7 +20,6 @@ $textColor: #606060;
     }
 
     &-media {
-        background-color: blue;
         grid-column: 1/2;
         grid-row: 1/2;
         padding: 0 24px 0 0;
@@ -33,6 +30,84 @@ $textColor: #606060;
 
             video {
                 width: 100%;
+            }
+        }
+
+        &-description {
+
+            &-title {
+                display: inline-block;
+                font-family: $font;
+                font-size: 1.125rem;
+                font-weight: 400;
+                color: #030303;
+                text-overflow: ellipsis;
+            }
+
+            &-optionsContainer {
+                height: 40px;  
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+            }
+
+            &-rating {
+                height: 40px;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                gap: 5px;
+
+                &-views, &-separator, &-publicationDate {
+                    margin: 0;
+                    color: $textColor;
+                    font-size: 14px;
+                    font-family: $font;
+                }
+            }
+
+            &-links {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+
+                &-render {
+                    height: 40px;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: flex-start;
+                    margin-left: 8px;
+
+                    &-flex {
+                        height: 36px;
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        justify-content: center;
+
+                        &-icon {
+                            width: 36px;
+                            text-align: center;
+                            font-size: 24px;
+                        }
+
+                        &-description {
+                            height: 100%;
+                            display: flex;
+                            align-items: center;
+                            padding-right: 6px;
+                            
+                            h1 {
+                                margin: 0;
+                                color: $titleColor;
+                                font-size: 14px;
+                                font-family: $font;
+                            }
+                        }
+
+                        
+                    }
+                }
             }
         }
     }
