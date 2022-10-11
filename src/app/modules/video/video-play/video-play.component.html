@@ -84,12 +84,14 @@
                 <h2 class="videoPlay-suggested-header-options">Videos sugeridos</h2>
             </div>
             <div class="videoPlay-suggested-body">
-                <ng-container class="videoPlay-suggested-cards" *ngIf="suggestedVideo">
-                    <app-card-video-row
-                        [data]="video" 
-                        *ngFor="let video of suggestedVideo"
-                        class="videoPlay-suggested-cards-row__videos"
-                    ></app-card-video-row>
+                <!-- <ng-container class="videoPlay-suggested-body-cards" *ngIf="suggestedVideo"> -->
+                <ng-container *ngIf="suggestedVideo">
+                    <div class="videoPlay-suggested-body-cards__videos">
+                        <app-card-video-row
+                            [data]="video" 
+                            *ngFor="let video of suggestedVideo"
+                        ></app-card-video-row>
+                    </div>
                 </ng-container>
             </div>
         </div>
