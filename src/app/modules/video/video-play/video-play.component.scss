@@ -3,6 +3,7 @@
 $font: 'Roboto', 'Arial', sans-serif;
 $titleColor: #030303;
 $textColor: #606060;
+$borderColor: #03030366;
 
 .videoPlay {
     &-container {
@@ -15,7 +16,7 @@ $textColor: #606060;
             max-width: 1706px;    
             display: grid;
             grid-template-columns: auto 402px;
-            grid-template-rows: auto auto;
+            grid-template-rows: repeat(3, auto);
         }
     }
 
@@ -34,6 +35,8 @@ $textColor: #606060;
         }
 
         &-description {
+            border-bottom: solid 2px $borderColor;
+            padding: 20px 0 8px 0;
 
             &-title {
                 display: inline-block;
@@ -112,10 +115,100 @@ $textColor: #606060;
         }
     }
 
+    &-chanel {
+        background-color: cadetblue;
+        grid-column: 1/2;
+        grid-row: 2/3;
+        padding: 0 24px 0 0;
+        display: flex;
+        flex-direction: column;
+
+        border-bottom: solid 2px $borderColor;
+        // padding: 20px 0 8px 0;
+
+        &-information {
+            height: calc(51px + 16px);
+            display: grid;
+            grid-template-columns: 64px auto 132px;
+            // grid-template-rows: 51px;
+            margin-bottom: 12px;
+            padding-top: 16px;
+
+            &-image {
+                height: 48px;
+                width: 48px;
+
+                &-file {
+                    height: 100%;
+                    width: 100%;
+                    border-radius: 50%;
+                }
+            }
+
+            &-flex {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+
+                &-name, &-numSubscribers {
+                    margin: 0;
+                    display: inline-block;
+                    font-family: $font;
+                }
+
+                &-name {
+                    color: $titleColor;
+                    font-size: 14px;
+                    
+                }
+
+                &-numSubscribers {
+                    color: $textColor;
+                    font-size: 12px;
+                }
+            }
+
+            &-button {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                button {
+                    background-color: #CC0000;
+                    color: #ffffff;
+                    margin: 0px 4px;
+                    padding: 10px 16px;
+                    border: none;
+                    border-radius: 5px;
+
+                    font-size: 14px;
+                    font-family: $font;
+                }
+            }
+        }
+
+        &-comments {
+            background-color: burlywood;
+            padding-left: 64px;
+                
+            &-comment {
+                color: $titleColor;
+                font-size: 14px;
+                font-family: $font;
+            }
+
+            &-showMore {
+                color: $textColor;
+                font-size: 12px;
+                font-family: $font;
+            }
+        }
+    }
+
     &-comments {
         background-color: blueviolet;
         grid-column: 1/2;
-        grid-row: 2/3;
+        grid-row: 3/4;
         padding: 0 24px 0 0;
     }
 
@@ -128,7 +221,7 @@ $textColor: #606060;
 
         &-header {
             // background-color: cadetblue;
-            border-bottom: solid 2px #00000066;
+            border-bottom: solid 2px $borderColor;
             margin: 15px 0 15px 0;
 
             h2 {

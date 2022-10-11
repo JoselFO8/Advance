@@ -1,7 +1,8 @@
 <div class="videoPlay-container">
-    <div class="videoPlay-container-center">
+    <div class="videoPlay-container-center" *ngIf="currentVideo">
 
-        <div class="videoPlay-media" *ngIf="currentVideo">
+        <!-- <p class="videoPlay-media-description-description">{{currentVideo.description}}</p> -->
+        <div class="videoPlay-media">
             <div class="videoPlay-media-video">
                 <video src="{{currentVideo.videoURL}}" class="videoPlay-media-video-reproduce" controls></video>
             </div>
@@ -89,17 +90,47 @@
 
                     </div>
                 </div>
-                <!-- <p class="videoPlay-media-description-description">{{currentVideo.description}}</p>
-                <div class="videoPlay-media-description-chanel"> -->
-                    <!-- // Cambiar sample image por cover y agregar chaneImage -->
-                    <!-- <img src="{{currentVideo.sampleImage}}" alt="" class="videoPlay-media-description-chanel-img">
-                    <p class="videoPlay-media-description-chanel-name">{{currentVideo.chanel}}</p>
-                </div> -->
+                
             </div>
     
         </div>
     
-    
+        <!-- About of chanel and anotations -->
+        <div class="videoPlay-chanel">
+
+
+            <div class="videoPlay-chanel-information">
+
+                <div class="videoPlay-chanel-information-image">
+                    <div class="videoPlay-chanel-information-image">
+                        <img 
+                            src="{{currentVideo.sampleImage}}" 
+                            alt="{{currentVideo.chanel}}" 
+                            class="videoPlay-chanel-information-image-file"
+                        >
+                    </div>
+                </div>
+
+                <div class="videoPlay-chanel-information-flex">
+                    <p class="videoPlay-chanel-information-flex-name">{{currentVideo.chanel}}</p>
+                    <p class="videoPlay-chanel-information-flex-numSubscribers">208000 suscriptores</p>
+                </div>
+
+                <div class="videoPlay-chanel-information-button">
+                    <button>SUSCRIBIRSE</button>
+                </div>
+
+            </div>
+
+            
+            <div class="videoPlay-chanel-comments">
+                <p class="videoPlay-chanel-comments-comment">Comentarios del canal respecto al video</p>
+                <p class="videoPlay-chanel-comments-showMore">MOSTRAR MAS</p>
+            </div>
+
+
+        </div>
+        
         <div class="videoPlay-comments">
             <div class="videoPlay-comments-header">
                 <h2 class="videoPlay-comments-header-amount">19 comentarios</h2>
@@ -108,6 +139,7 @@
                     <h2 class="videoPlay-comments-header-order-type">ORDENAR POR</h2>
                 </div>
             </div>
+            
             <div class="videoPlay-comments-body">
                 <div class="videoPlay-comments-input">
                     <div class="videoPlay-comments-input">
