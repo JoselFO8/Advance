@@ -131,35 +131,111 @@
 
         </div>
         
+        
         <div class="videoPlay-comments">
             <div class="videoPlay-comments-header">
-                <h2 class="videoPlay-comments-header-amount">19 comentarios</h2>
-                <div class="videoPlay-comments-header-order">
-                    <i class="videoPlay-comments-header-order-icon"></i>
-                    <h2 class="videoPlay-comments-header-order-type">ORDENAR POR</h2>
+
+                <div class="videoPlay-comments-header-nav">
+                    <h2 class="videoPlay-comments-header-nav-amount">19 comentarios</h2>
+                    <div class="videoPlay-comments-header-nav-order">
+                        <!-- <i class="videoPlay-comments-header-order-icon"></i> -->
+                        <fa-icon [icon]="faBars" class="videoPlay-comments-header-nav-order-icon"></fa-icon>
+                        <h2 class="videoPlay-comments-header-nav-order-type">ORDENAR POR</h2>
+                    </div>
+                </div>
+
+                <div class="videoPlay-comments-header-user">
+                    <div class="videoPlay-comments-header-user-clarification">
+                        <p class="videoPlay-comments-header-user-clarification-text">Comentar como</p>
+                    </div>
+                    <div class="videoPlay-comments-header-user-chanel">
+                        <img 
+                            src="https://yt3.ggpht.com/ytc/AMLnZu_7QhYANtG97E9trnXxoloM-Us5q7w9F6A5yk_1ZsVI5542YdNm-EzI7a3Ah7O3=s48-c-k-c0x00ffffff-no-rj"
+                            alt="Imagen del canal" 
+                            class="videoPlay-comments-header-user-chanel-img"
+                        >
+                        <h1 class="videoPlay-comments-header-user-chanel-name">Canal x</h1>
+                        <fa-icon [icon]="faBars" class="videoPlay-comments-header-user-chanel-icon"></fa-icon>
+                    </div>
+
+                </div>
+
+                <div class="videoPlay-comments-header-comment">
+                    <!-- cols="30" -->
+                    <form action="" class="videoPlay-comments-header-comment-form">
+                        <div contenteditable class="videoPlay-comments-header-comment-form-fakeTextarea"></div>
+                        <!-- <textarea 
+                            name="" id="" 
+                            rows="auto"
+                            placeholder="Agregar un comentario como Canal x..." 
+                            class="videoPlay-comments-header-comment-form-input">
+                        </textarea> -->
+                    </form>
                 </div>
             </div>
             
             <div class="videoPlay-comments-body">
-                <div class="videoPlay-comments-input">
-                    <div class="videoPlay-comments-input">
-                        <img src="" alt="" class="videoPlay-comments-input-img">
-                        <textarea name="" id="" cols="30" rows="10" placeholder="Agregar un comentario..." class="videoPlay-comments-input-comment"></textarea>
-                    </div>
-                    <div class="videoPlay-comments-posted">
-                        <ng-container class="videoPlay-comments-posted-container">
-                            <img src="https://yt3.ggpht.com/ytc/AMLnZu_7QhYANtG97E9trnXxoloM-Us5q7w9F6A5yk_1ZsVI5542YdNm-EzI7a3Ah7O3=s48-c-k-c0x00ffffff-no-rj" alt="Imagen del canal" class="videoPlay-comments-posted-img">
-                            <p class="videoPlay-comments-posted-chanel">Canal X</p>
-                            <p class="videoPlay-comments-posted-date">hace 6 horas</p>
-                            <p class="videoPlay-comments-posted-comment">Compentario posteado</p>
-                            <div class="videoPlay-comments-posted-reply">
-                                <i class="videoPlay-comments-posted-reply-like">Icono like</i>
-                                <i class="videoPlay-comments-posted-reply-dislike">Icono dislike</i>
-                                <button class="videoPlay-comments-posted-reply-response">RESPONDER</button>
+                
+                <!-- class="videoPlay-comments-body-posted-container" -->
+                <ng-container>
+                    <div class="videoPlay-comments-body-container">
+
+                        <div class="videoPlay-comments-body-posted">
+    
+                            <div class="videoPlay-comments-body-posted-img">
+                                <img 
+                                    src="https://yt3.ggpht.com/ytc/AMLnZu_7QhYANtG97E9trnXxoloM-Us5q7w9F6A5yk_1ZsVI5542YdNm-EzI7a3Ah7O3=s48-c-k-c0x00ffffff-no-rj" 
+                                    alt="Imagen del canal"
+                                >
                             </div>
-                        </ng-container>
+    
+    
+                            <div class="videoPlay-comments-body-posted-rows">
+                                
+                                
+                                <div class="videoPlay-comments-body-posted-rows-publication">
+                                    <p class="videoPlay-comments-body-posted-rows-publication-chanel">Canal X</p>
+                                    <p class="videoPlay-comments-body-posted-rows-publication-date">hace 6 horas</p>
+                                </div>
+    
+                                <div class="videoPlay-comments-body-posted-rows-comment">
+                                    <p>Compentario posteado</p>
+                                </div>
+    
+                                <div class="videoPlay-comments-body-posted-rows-rating">
+                                    <div class="videoPlay-comments-body-posted-rows-rating-flex">
+                                        <fa-icon [icon]="faBars" class="videoPlay-comments-body-posted-rows-rating-flex-icon"></fa-icon>
+                                        <div class="videoPlay-comments-body-posted-rows-rating-flex-description">
+                                            <p>10</p>
+                                        </div>
+                                    </div>
+                                    <div class="videoPlay-comments-body-posted-rows-rating-flex">
+                                        <fa-icon [icon]="faBars" class="videoPlay-comments-body-posted-rows-rating-flex-icon"></fa-icon>
+                                        <div class="videoPlay-comments-body-posted-rows-rating-flex-description">
+                                            <p>1</p>
+                                        </div>
+                                    </div>
+                                    <div class="videoPlay-comments-body-posted-rows-rating-flex">
+                                        <div class="videoPlay-comments-body-posted-rows-rating-flex-description">
+                                            <h1>RESPONDER</h1>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+
+                            </div>
+                    
+                        </div>
+
+                        <div class="videoPlay-comments-body-showmore">
+                            <button class="videoPlay-comments-body-posted-reply-response">RESPUESTAS</button>
+                        </div>
+
                     </div>
-                </div>
+
+                
+                </ng-container>
+
             </div>
         </div>
     
