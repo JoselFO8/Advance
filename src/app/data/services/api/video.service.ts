@@ -3,7 +3,7 @@ import { IVideo, IVideos } from '@shared/components/cards/card-video/icard-video
 import { Observable, of } from 'rxjs';
 import { catchError, map  } from 'rxjs/operators';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { environment } from 'environments/environment.dev';
+import { environment } from 'environments/environment.prod';
 
 @Injectable({
   providedIn: 'root'

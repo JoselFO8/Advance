@@ -6,7 +6,7 @@
 // API prueba esta en el puerto 4000
 export const environment = {
   production: false,
-  uri: 'http://localhost:3001/' 
+  uri: 'http://localhost:3001/'
 };
 
 // Configurar el angular.json

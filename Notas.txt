@@ -1,1 +1,31 @@
 git commit -m "Change user metadata & routes & card-user & user-datail & user-list"
+
+
+en angular json line 30
+
+"stylePreprocessorOptions": {
+    "includePaths": [
+    "src/assets/scss"
+    ]
+},
+"styles": [
+    "src/assets/scss/styles.scss"
+],
+
+linea 62
+
+"dev": {
+    "fileReplacements": [
+    {
+        "replace": "src/environments/environment.ts",
+        "with": "src/environments/environment.dev.ts"
+    }
+    ]
+},
+
+
+linea 87
+
+"dev": {
+              "browserTarget": "angular-firstProyect:build:dev"
+            },

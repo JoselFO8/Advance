@@ -35,7 +35,7 @@ $borderColor: #03030366;
 
 .videoPlay {
     &-container {
-        background-color: bisque;
+        // background-color: bisque;
         display: flex;
         justify-content: center;
         
@@ -318,7 +318,6 @@ $borderColor: #03030366;
             }
             
             &-posted {
-                background-color: brown;
                 display: flex;
                 flex-direction: row;
 
@@ -397,7 +396,23 @@ $borderColor: #03030366;
             }
 
             &-showmore {
-                background-color: cadetblue;
+                display: none;
+                // display: flex;
+                flex-direction: row;
+                align-items: center;
+                padding-left: 56px;
+
+                &-icon {
+                    font-size: 16px;
+                    margin: 8px;
+                    color: #2c41e1;
+                }
+
+                p {
+                    @extend %primaryText;
+                    color: #2c41e1;
+                    margin: 0 8px 0 8px;
+                }
             }
         }
     }

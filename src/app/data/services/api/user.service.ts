@@ -3,7 +3,7 @@ import { IUser, IUsers } from '@shared/components/cards/card-user/icard-user.met
 import { Observable, of } from 'rxjs';
 import { catchError, map  } from 'rxjs/operators';
 import { HttpClient, HttpErrorResponse } from "@angular/common/http";
-import { environment } from 'environments/environment.dev';
+import { environment } from 'environments/environment.prod';
 
 
 @Injectable({
