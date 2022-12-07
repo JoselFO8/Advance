@@ -13,6 +13,7 @@ import { HeaderComponent } from './layout/header/header.component';
 import { LeftNavComponent } from './layout/left-nav/left-nav.component';
 import { LeftNavMenuComponent } from './layout/left-nav/left-nav-menu/left-nav-menu.component';
 import { Page404Component } from './modules/server/page404/page404.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [ 
@@ -31,7 +32,8 @@ import { Page404Component } from './modules/server/page404/page404.component';
     CoreModule,
     SharedModule,
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FontAwesomeModule
   ],
   providers: [ 
     {

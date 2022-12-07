@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SkeletonComponent implements OnInit {
   public showLeftNav = false;
-  public $theme: 'dark' | 'red' | 'blue-dark' | 'yellow' = 'red'
+  public $theme: 'dark' | 'red' | 'blue-dark' | 'yellow' | 'white' = 'white'
   constructor() {  }
 
   showMenu() {

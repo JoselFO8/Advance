@@ -1,5 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { faBars, faBell, faComment, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
+import { faBars, faBell, faComment, faGlassCheers } from '@fortawesome/free-solid-svg-icons'
 
 @Component({
   selector: 'app-header',
@@ -11,7 +11,7 @@ export class HeaderComponent implements OnInit {
   public faBars = faBars;
   public faBell = faBell;
   public faComment = faComment;
-  public faMagnifyingGlass = faMagnifyingGlass;
+  public prueba = faGlassCheers;
   public avatar = 'assets/images/defaults/Man_1.jpg';
   public logo = 'assets/images/logo/VideoTube.png';
 

@@ -20,7 +20,6 @@
                     cursor: pointer;
                 }
                 &-logo {
-                    // background-color: white;
                     display: flex;
                     align-items: center;
                     > img {
@@ -38,7 +37,6 @@
             &__search {
                 height: 40px;
                 width: 688px;
-                // width: 100%;
                 min-width: 300px;
                 margin-left: 34px;
                 padding: 2px 6px;
@@ -54,7 +52,6 @@
                     border: 0.5px solid #9c9c9c;
                     border-radius: 0%;
                     padding-left: 15px;
-                    
 
                     &:focus {
                         outline: none;
@@ -69,6 +66,11 @@
                     border: none;
                     background-color: #F8F8F8;
                     border: 0.5px solid #9c9c9c;
+
+                    >img {
+                        height: 1.2rem;
+                        filter: invert(72%) sepia(0%) saturate(1%) hue-rotate(196deg) brightness(87%) contrast(90%);
+                    }
                 }
 
                 &-icon {

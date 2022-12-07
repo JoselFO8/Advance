@@ -29,3 +29,12 @@ linea 87
 "dev": {
               "browserTarget": "angular-firstProyect:build:dev"
             },
+
+
+"@fortawesome/angular-fontawesome": "^0.11.0",
+"@fortawesome/fontawesome-svg-core": "^6.2.0",
+"@fortawesome/free-regular-svg-icons": "^6.2.0",
+"@fortawesome/free-solid-svg-icons": "^6.2.0",
+
+
+Debido a politicas del servidor API, el archivo multimedia debe pesar menos de 4,5 MB.
