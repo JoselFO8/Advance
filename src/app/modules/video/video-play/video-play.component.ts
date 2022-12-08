@@ -5,8 +5,7 @@ import { ICardVideo } from '@shared/components/cards/card-video/icard-video.meta
 import { format } from 'timeago.js';
 
 // Icons
-import { faBars } from '@fortawesome/free-solid-svg-icons'
-
+import { faBars, faShare, faThumbsUp, faThumbsDown, faDownload, faHandScissors, faPlusSquare } from '@fortawesome/free-solid-svg-icons'
 
 @Component({
   selector: 'app-video-play',
@@ -18,6 +17,12 @@ export class VideoPlayComponent implements OnInit {
   public currentVideo?: ICardVideo;
   public suggestedVideo?: ICardVideo[] | undefined;
   public faBars = faBars;
+  public faThumbsUp = faThumbsUp;
+  public faThumbsDown = faThumbsDown;
+  public faShare = faShare;
+  public faDownload = faDownload;
+  public faHandScissors = faHandScissors;
+  public faPlusSquare = faPlusSquare;
 
   constructor(
     private route: ActivatedRoute,
