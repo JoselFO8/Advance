@@ -1,11 +1,14 @@
 .panel {
     &-main-content {
+        background: #fff;
+        height: calc(100% - 0.5rem * 2);
+        width: calc(100% - 0.5rem * 2);
+        overflow-y: auto;
+
         grid-column: 2;
         grid-row: 2;
         padding: 1rem;
-        margin: 1rem;
-        background: #fff;
+        margin: 0.5rem;
         border-radius: 5px;
-        // box-shadow: 1px 1px 12px 1px rgba(0,0,0,0.1);
     }
 }

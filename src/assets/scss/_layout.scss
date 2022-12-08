@@ -1,14 +1,16 @@
 @import './themes';
 
 .panel {
+    
     &-main-container, &-main-container-full {
+        background-color: rgba(99, 20, 168, 0.1);
+        height: 100vh;
+        width: 100vw;
+        position: relative;
+
         display: grid;
-        grid-template-columns: 240px auto;
-        // grid-template-rows: 60px auto 50px;
-        grid-template-rows: 65px auto;
-        // height: 100vh;
-        // min-height: 500px;
-        // min-height: 100vh;
+        grid-template-columns: 240px calc(100% - 240px);
+        grid-template-rows: 65px calc(100% - 65px);
     }
     
     &-main-container-full {
@@ -19,7 +21,8 @@
         box-shadow: 1px 1px 6px 0px rgba(0,0,0,0.5);
         z-index: 1;
     }
-    
+
+    // &-main-content => _main-content.scss 
 }
 
 @each $name, $theme in $themes {
