@@ -29,6 +29,7 @@
     @include create-header($name, $theme);
     @include create-left-nav($name, $theme);
     @include create-footer($name, $theme);
+    @include create-main-content($name, $theme);
 }
 
 @media(max-width: 768px) {

@@ -1,0 +1,458 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap');
+
+$font: 'Roboto', 'Arial', sans-serif;
+$titleColor: #030303;
+$textColor: #606060;
+$borderColor: #03030366;
+
+// Texts
+%primaryText {
+    margin: 0;
+    color: $titleColor;
+    font-family: $font;
+    font-size: 14px;
+}
+
+%secondaryText {
+    margin: 0;
+    color: $textColor;
+    font-family: $font;
+    font-size: 14px;
+}
+
+// Buttons
+%button {
+    // background-color: #6314a8;
+    // color: #ffffff;
+    margin: 0px 4px;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 5px;
+
+    font-size: 14px;
+    font-family: $font;
+}
+
+@mixin create-video-play($name, $theme) { 
+    // .panel-#{$name} {
+        // .panel-main-content {
+            .videoPlay {
+                &-container {
+                    // background-color: bisque;
+                    display: flex;
+                    justify-content: center;
+                    
+                    &-center {
+                        max-width: 1706px;    
+                        display: grid;
+                        grid-template-columns: auto 402px;
+                        grid-template-rows: repeat(3, auto);
+                    }
+                }
+            
+                &-media {
+                    grid-column: 1/2;
+                    grid-row: 1/2;
+                    padding: 0 24px 0 0;
+                    display: flex;
+                    flex-direction: column;
+            
+                    &-video {
+            
+                        video {
+                            width: 100%;
+                        }
+                    }
+            
+                    &-description {
+                        border-bottom: solid 2px $borderColor;
+                        padding: 20px 0 8px 0;
+            
+                        &-title {
+                            @extend %primaryText;
+                            font-size: 18px;
+                            font-weight: 400;
+                            text-overflow: ellipsis;
+                        }
+            
+                        &-optionsContainer {
+                            height: 40px;  
+                            display: flex;
+                            flex-direction: row;
+                            justify-content: space-between;
+                        }
+            
+                        &-rating {
+                            height: 40px;
+                            display: flex;
+                            flex-direction: row;
+                            align-items: center;
+                            gap: 5px;
+            
+                            &-views, &-separator, &-publicationDate {
+                                @extend %secondaryText;
+                            }
+                        }
+            
+                        &-links {
+                            display: flex;
+                            flex-direction: row;
+                            align-items: center;
+            
+                            &-render {
+                                height: 40px;
+                                display: flex;
+                                flex-direction: row;
+                                align-items: flex-start;
+                                margin-left: 8px;
+            
+                                &-flex {
+                                    height: 36px;
+                                    display: flex;
+                                    flex-direction: row;
+                                    align-items: center;
+                                    justify-content: center;
+            
+                                    &-icon {
+                                        color: map-get($map: $theme, $key: 'light');
+                                        width: 36px;
+                                        text-align: center;
+                                        font-size: 24px;
+
+                                    }
+                                    
+                                    .activate {
+                                        color: map-get($map: $theme, $key: 'secondary');    
+                                    }
+            
+                                    &-description {
+                                        height: 100%;
+                                        display: flex;
+                                        align-items: center;
+                                        padding-right: 6px;
+                                        
+                                        h1 {
+                                            @extend %primaryText;
+                                        }
+                                    }
+            
+                                    
+                                }
+                            }
+                        }
+                    }
+                }
+            
+                &-chanel {
+                    grid-column: 1/2;
+                    grid-row: 2/3;
+                    display: flex;
+                    flex-direction: column;
+                    margin-top: 16px;
+                    padding-right: 24px;
+            
+                    &-information {
+                        height: calc(51px + 16px);
+                        display: grid;
+                        grid-template-columns: 64px auto 132px;
+                        margin-bottom: 12px;
+                        padding-top: 16px;
+            
+                        &-image {
+                            height: 48px;
+                            width: 48px;
+            
+                            &-file {
+                                height: 100%;
+                                width: 100%;
+                                border-radius: 50%;
+                            }
+                        }
+            
+                        &-flex {
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+            
+                            &-name {
+                                @extend %primaryText;
+                                font-weight: 500;
+                                
+                            }
+            
+                            &-numSubscribers {
+                                @extend %secondaryText;
+                            }
+                        }
+            
+                        &-button {
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+            
+                            button {
+                                @extend %button;
+                                background-color: map-get($map: $theme, $key: 'secondary');
+                                color: map-get($map: $theme, $key: 'primary');
+                            }
+                        }
+                    }
+            
+                    &-comments {
+                        padding-left: 64px;
+                        border-bottom: solid 2px $borderColor;
+                            
+                        &-comment {
+                            @extend %primaryText;
+                            margin-bottom: 16px;
+                        }
+            
+                        &-showMore {
+                            @extend %secondaryText;
+                            font-size: 12px;
+                            margin-bottom: 24px;
+            
+                            &:active {
+                                color: #6314a8;
+                            }
+                        }
+                    }
+                }
+            
+                &-comments {
+                    grid-column: 1/2;
+                    grid-row: 3/4;
+                    padding: 0 24px 0 0;
+            
+                    &-header {
+                        margin: 24px 0px 32px;
+                        
+                        &-nav {
+                            height: 24px;
+                            display: flex;
+                            flex-direction: row;
+                            margin-bottom: 24px;
+                            align-items: center;
+            
+                            &-amount {
+                                @extend %primaryText;
+                                font-size: 16px;
+                                margin-right: 32px;
+                            }
+                
+                            &-order {
+                                display: flex;
+                                flex-direction: row;
+                                align-items: center;
+                
+                                &-icon {
+                                    margin: 0;
+                                    font-size: 24px;
+                                    margin-right: 8px;
+                                }
+                
+                                &-type {
+                                    @extend %primaryText;
+                                    font-size: 16px;
+                                }
+                            }
+                        }
+                        
+                        &-user {
+                            margin-bottom: 16px;
+            
+                            &-clarification {
+                                
+                                &-text {
+                                    @extend %primaryText;
+                                    margin-bottom: 8px;
+                                }
+                            }
+            
+                            &-chanel {
+                                height: 36px;
+                                display: flex;
+                                flex-direction: row;
+                                align-items: center;
+                                
+                                &-img {
+                                    height: 100%;
+                                    border-radius: 100%;
+                                }
+            
+                                &-name {
+                                    @extend %primaryText;
+                                    font-size: 16px;
+                                    margin: 0px 15px 0px 15px 
+                                }
+            
+                                &-icon {
+                                    font-size: 24px;
+                                }
+                            }
+                        }
+            
+                        &-comment {
+            
+                            &-form {
+                                width: 100%;
+                                position: relative;
+                                overflow: hidden;
+            
+                                &-fakeTextarea {
+                                    outline: 0px;
+                                    border-bottom: 1px solid #828282cc;
+                                    min-height: 26px;
+                                    color: #828282d8;
+                                    font-size: 14px;
+                                    
+                                    &:empty::before {
+                                    position: absolute;
+                                    content: "Agregar un comentario...";
+                                    }
+            
+                                    &:focus {
+                                        border-bottom: 2px solid #000000;
+                                        color: $titleColor;
+                                    }
+            
+                                    
+                                }
+                            }
+                        }
+                    }
+            
+                    &-body {
+                        &-container {
+                            display: flex;
+                            flex-direction: column;
+                        }
+                        
+                        &-posted {
+                            display: flex;
+                            flex-direction: row;
+            
+                            &-img {
+                                width: 56px;
+            
+                                img {
+                                    height: 40px;
+                                    width: 40px;
+                                    border-radius: 100%;
+                                }
+                            }
+            
+                            &-rows {
+            
+                                &-publication {
+                                    display: flex;
+                                    flex-direction: row;
+            
+                                    &-chanel {
+                                        @extend %primaryText;
+                                        font-size: 13px;
+                                        font-weight: 500;
+                                        margin-right: 4px;
+                                    }
+            
+                                    &-date {
+                                        @extend %secondaryText;
+                                        font-size: 12px;
+                                    }
+                                }
+            
+                                &-comment {
+            
+                                    p {
+                                        @extend %primaryText;
+                                    }
+                                }
+            
+                                &-rating {
+                                    display: flex;
+                                    flex-direction: row;
+                                    align-items: center;
+            
+                                    &-flex {
+                                        height: 34px;
+                                        display: flex;
+                                        flex-direction: row;
+                                        align-items: center;
+            
+                                        &-icon {
+                                            font-size: 16px;
+                                            margin: 8px;
+                                        }
+            
+                                        &-description {
+                                            display: flex;
+                                            align-items: center;
+            
+                                            p {
+                                                @extend %primaryText;
+                                                font-size: 12px;
+                                                margin-right: 8px;
+                                            }
+            
+                                            h1 {
+                                                @extend %primaryText;
+                                                padding: 8px 10px;
+                                            }
+                                        }
+            
+                                        
+                                    }
+                                }
+                            }
+                        }
+            
+                        &-showmore {
+                            display: none;
+                            // display: flex;
+                            flex-direction: row;
+                            align-items: center;
+                            padding-left: 56px;
+            
+                            &-icon {
+                                font-size: 16px;
+                                margin: 8px;
+                                color: #2c41e1;
+                            }
+            
+                            p {
+                                @extend %primaryText;
+                                color: #2c41e1;
+                                margin: 0 8px 0 8px;
+                            }
+                        }
+                    }
+                }
+            
+                &-suggested {
+                    width: calc(426px - 24px);
+                    grid-column: 2/3;
+                    grid-row: 1/4;
+                    padding: 0 24px 0 0;
+            
+                    &-header {
+                        border-bottom: solid 2px $borderColor;
+                        margin: 15px 0 15px 0;
+            
+                        h2 {
+                            margin-left: 15px;
+                        }
+                    }
+            
+                    &-body {
+                        
+                        &-cards__videos {
+                            display: flex;
+                            flex-direction: column;
+                            gap: 9px;
+                        }
+                    }
+                }
+            }
+//         }
+//     }
+}
