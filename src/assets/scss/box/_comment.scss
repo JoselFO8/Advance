@@ -1,0 +1,208 @@
+.videoPlay-comments {
+    grid-column: 1/2;
+    grid-row: 3/4;
+    padding: 0 24px 0 0;
+
+    &-header {
+        margin: 24px 0px 32px;
+        
+        &-nav {
+            height: 2rem;
+            
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 0.5rem;
+
+            margin-bottom: 24px;
+
+            &-amount {
+                @extend %primaryText;
+                font-size: 1em;
+                margin-right: 2em;
+            }
+
+            &-order {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+
+                >img {
+                    height: 2em;
+                    margin-right: 0.5em;
+
+                    filter: invert(0%) sepia(5%) saturate(20%) hue-rotate(228deg) brightness(106%) contrast(106%);
+                }
+
+                &-type {
+                    @extend %primaryText;
+                    font-size: 16px;
+                }
+            }
+        }
+        
+        &-user {
+            margin-bottom: 16px;
+
+            &-clarification {
+                margin-bottom: 1em;
+                
+                >p {
+                    @extend %primaryText;
+                }
+            }
+
+            &-chanel {
+                height: 2em;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                gap: 0.5rem;
+                
+                &-img {
+                    height: 100%;
+                    border-radius: 100%;
+                }
+
+                &-name {
+                    @extend %primaryText;
+                    font-size: 1em;
+                }
+            }
+        }
+
+        &-comment {
+
+            &-form {
+                width: 100%;
+                position: relative;
+                overflow: hidden;
+
+                &-fakeTextarea {
+                    outline: 0px;
+                    border-bottom: 1px solid #828282cc;
+                    min-height: 26px;
+                    color: #828282d8;
+                    font-size: 14px;
+                    
+                    &:empty::before {
+                    position: absolute;
+                    content: "Agregar un comentario...";
+                    }
+
+                    &:focus {
+                        border-bottom: 2px solid #000000;
+                        color: $titleColor;
+                    }
+
+                    
+                }
+            }
+        }
+    }
+
+    &-body {
+        &-container {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        &-posted {
+            display: flex;
+            flex-direction: row;
+
+            &-img {
+                width: 56px;
+
+                img {
+                    height: 40px;
+                    width: 40px;
+                    border-radius: 100%;
+                }
+            }
+
+            &-rows {
+
+                &-publication {
+                    display: flex;
+                    flex-direction: row;
+                    gap: 0.5em;
+
+                    &-chanel {
+                        @extend %primaryText;
+                        font-size: 0.9em;
+                        font-weight: 500;
+                    }
+
+                    &-date {
+                        @extend %secondaryText;
+                        font-size: 12px;
+                    }
+                }
+
+                &-comment {
+
+                    p {
+                        @extend %primaryText;
+                    }
+                }
+
+                &-rating {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+
+                    &-flex {
+                        height: 34px;
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+
+                        &-icon {
+                            font-size: 16px;
+                            margin: 8px;
+                        }
+
+                        &-description {
+                            display: flex;
+                            align-items: center;
+
+                            p {
+                                @extend %primaryText;
+                                font-size: 12px;
+                                margin-right: 8px;
+                            }
+
+                            h1 {
+                                @extend %primaryText;
+                                padding: 8px 10px;
+                            }
+                        }
+
+                        
+                    }
+                }
+            }
+        }
+
+        &-showmore {
+            display: none;
+            // display: flex;
+            flex-direction: row;
+            align-items: center;
+            padding-left: 56px;
+
+            &-icon {
+                font-size: 16px;
+                margin: 8px;
+                color: #2c41e1;
+            }
+
+            p {
+                @extend %primaryText;
+                color: #2c41e1;
+                margin: 0 8px 0 8px;
+            }
+        }
+    }
+}

@@ -1,6 +1,8 @@
 @import './normalize.scss';
 @import './variables.scss';
 
+@import './box/comment';
+
 @import './video/play.scss';
 
 @import './layout/main-content.scss';
@@ -8,4 +10,3 @@
 @import './layout/left-nav.scss';
 @import './layout/footer.scss';
 @import './layout.scss';
-

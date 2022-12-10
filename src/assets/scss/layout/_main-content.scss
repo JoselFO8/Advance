@@ -32,9 +32,5 @@
 }
 
 @each $name, $theme in $themes {
-    // @include create-header($name, $theme);
-    // @include create-left-nav($name, $theme);
-    // @include create-footer($name, $theme);
     @include create-video-play($name, $theme);
-    // @include create-main-content($name, $theme);
 }

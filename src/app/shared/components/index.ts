@@ -3,7 +3,6 @@ import { CardUserComponent } from "./cards/card-user/card-user.component";
 import { CarouselComponent } from "./carousel/carousel.component";
 import { TitleH1Component } from "./titles/title-h1/title-h1.component";
 
-
 // Loaders
 import { CardLoaderComponent } from "./loaders/card-loader/card-loader.component";
 
@@ -18,6 +17,7 @@ import { CtTfootComponent } from "./tablets/complex-table/ct-tfoot/ct-tfoot.comp
 import { VideoPreviewComponent } from "./cards/card-video/video-preview/video-preview.component";
 import { CardVideoComponent } from "./cards/card-video/card-video.component";
 import { CardVideoRowComponent } from "./cards/card-video-row/card-video-row.component";
+import { CommentBoxComponent } from "./box/comment-box/comment-box.component";
 
 
 // fromComponents ?
@@ -31,6 +31,8 @@ export const components: any[] = [
     CardLoaderComponent,
     // Buttons
     SolidButtonComponent,
+    // Box
+    CommentBoxComponent,
     // Video
     VideoPreviewComponent,
     // Complex-Table
@@ -51,6 +53,9 @@ export * from './loaders/card-loader/card-loader.component'
 
 // Buttons
 export * from "./buttons/solid-button/solid-button.component";
+
+// Box
+export * from "./box/comment-box/comment-box.component";
 
 // Video
 export * from "./cards/card-video/video-preview/video-preview.component";

@@ -1,0 +1,32 @@
+$font: 'Roboto', 'Arial', sans-serif;
+$titleColor: #030303;
+$textColor: #606060;
+$borderColor: #03030366;
+
+// Texts
+%primaryText {
+    margin: 0;
+    color: $titleColor;
+    font-family: $font;
+    font-size: 14px;
+}
+
+%secondaryText {
+    margin: 0;
+    color: $textColor;
+    font-family: $font;
+    font-size: 14px;
+}
+
+// Buttons
+%button {
+    // background-color: #6314a8;
+    // color: #ffffff;
+    margin: 0px 4px;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 5px;
+
+    font-size: 14px;
+    font-family: $font;
+}
